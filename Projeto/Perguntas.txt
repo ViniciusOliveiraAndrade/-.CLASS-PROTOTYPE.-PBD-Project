@@ -1,0 +1,64 @@
+Omitiu alguns dados das tabelas?
+Editora é so o nome
+
+
+===================
+Desculpe por incomodar o senhor com tantas perguntas, tentei o maximo que puder para diminuir a quantidade e tamanho e me desculpe caso o senhor ache algumapergunta redundante é que isso essas perguntas ficaram na minha cabeça.
+
+1. As Matriculas e codigos de usuarios são apenas numeros?
+
+	Esta decisão é sua 
+
+2. Quais são os identificadores para entidades?Posso escolher um dos atributos unicos?
+
+	Esta decisão é sua 
+
+3. O telefone é multivalorado ou tem um numero pequeno de telefones.
+
+	Esta decisão é sua 
+
+4. Autores em livro e multivalorado?
+
+	É uma ótima pergunta. Sim, devem ser sim, uma vez que um mesmo autor pode escrever vários livros, e vários autores podem participar de vários livros distintos e/ou em comum.
+
+5. As datas previstas para entrega são todos em um tempo fixo?
+
+	Sim, em dias. Quantos dias? Vc decide
+
+6. Oque seria a data de realização, de validação, e data limite de Reserva?
+
+	Data da realização: é a data que é feita a reserva. Data de validação
+	Data de Validação: data máxima em que a reserva estará ativa. Ou seja, se o usuário faz a reserva, ele deverá dizer quando deverá pegar o livro, assim que ele estiver disponível. Por exemplo, se o livro estiver disponível a partir de hj, colocar 24h após a data de liberação do livro. Passado esse prazo, a reserva fica inativa.
+
+7. O senhoro poderia explicar melhor a primeira e segunda regra do anexo "Regras de negocio".
+
+	Não entendi
+
+8. A regra 4 não entra em conflito com a regra de registar emprestimo de funcionario. ou o Aluno/Professor na sua visao do sistema podem realizar emprestimo?
+
+	Favor especificar melhor. De qual vc está falando?
+
+9. Na regra 9 e 14 de "Regras de negocio" implica que há uma maneria de acessar o sistema como convidado?
+
+	Diz assim: "Qualquer usuário do sistema pode realizar consultas sobre o acervo da biblioteca, mas apenas os alunos e professores da universidade podem realizar reservas e empréstimos"
+
+10. O senhor poderia explicar melhor oque seria "Consultar o caixa da biblioteca em um determinado intervalo de tempo;"?
+
+	O funcionário da biblioteca é quem faz o emprestimo, as devoluções e recebe as multas. O sistema deverá ter uma função para este funcionário possa consultar quando em reais entrou na biblioteca (referente as multas), em determinado período de tempo (do dia x ao dia y, por exemplo).
+
+11. O que seria a consulta "por filtragem nos atributos dos livros" 
+
+	O livro possui os seguintes atributos:  código, título, autores, editora, número da edição, ano de publicação e número de exemplares. Seu sistema deverá disponibilizar ao usuário a consulta por qualquer um desses atributos. Por exemplo, os livros de um determinado autor, os livros publicados no ano 2016, quais os livros que possuem mais de 10 exemplares, etc...
+
+12. Posso Adicionar mais atributos as entidades?
+
+	Se achar por bem, sim. Mas mesmo que vc adicione mais atributos, todos os que estão na descrição do projeto são obrigatórios e não-substituíveis.
+
+13. Como o senhor gostaria que fosse o acesso ao sistemas, tipo, Ao inicia o programa ele abre a tela de login ou abre uma tela padrão para posteriormente fazer o login ou sei la. 
+
+	Baseando no artefato de que qualquer pessoa pode fazer consulta, não vejo aplicabilidade de ter direto a tela de login. Pode mostrar direto, uma tela pra consulta. Mas, para fazer emprestimos, deverá veirifcar se está logado. 
+
+
+
+Desde de já sou grato ao senhor, Depois farei mais perguntas quanto ao sistema caso eu possa claro. 
+Fica com Deus. Boa noite.

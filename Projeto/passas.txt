@@ -1,0 +1,3 @@
+A Universidade Califórnia quer implementar um sistema para gerenciar o seu acervo bibliográfico.
+A aplicação será usada para divulgar o acervo da universidade e oferecer comodidade aos seus usuários.
+Toda a interação entre a aplicação e os seus usuários deve ser feita através do software de gerenciamento interno da Biblioteca.

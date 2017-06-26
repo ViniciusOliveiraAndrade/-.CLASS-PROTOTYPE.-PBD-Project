@@ -1,0 +1,56 @@
+Regras de negocio:
+1	Caso o livro reservado esteja disponível, a data de validação é igual a data de realização da reserva;
+
+2	Caso contrário, esta data corresponde ao dia em que o livro é disponibilizado para o usuário;
+
+3		Quando o livro é devolvido e o usuário é o próximo da fila para este livro;
+	
+4	O empréstimo pode ser realizado por alunos e professores da universidade;
+
+5	Cada professor pode ter cinco livros emprestados simultaneamente;
+	
+6	Cada aluno pode ter até três livros emprestados;
+
+7	Empréstimos em andamento devem ser considerados no momento do empréstimo;
+
+8	Para cada dia de atraso no prazo de entrega, o cliente deve pagar uma multa de R$ 1,00 por cada livro em atraso;
+
+9	Qualquer usuário do sistema pode realizar consultas sobre o acervo da biblioteca, mas apenas os alunos e professores da universidade podem realizar reservas e empréstimos;
+
+10	Usuários que efetuam devolução com mais de 7 dias de atraso ficam com a conta suspensa por 30 dias;
+
+11	Usuários em atraso ou com a conta suspensa não podem realizar empréstimos nem reservas;
+
+12	Funcionário:
+		Cadastrar novos departamentos, cursos e usuários no sistema;
+		Registrar um empréstimo;
+		Registrar uma devolução;
+			Alertando sobre títulos reservados;
+		Consultar uma relação de usuários em atraso;
+		Consultar uma relação de usuários suspensos;
+		Suspender a conta de um usuário;
+		Consultar a relação de livros emprestados a um determinado usuário;
+		Consultar o caixa da biblioteca em um determinado intervalo de tempo;
+
+13	Alunos e Professores:
+		Efetuar uma reserva;
+		Consultar a sua situação;
+			Regularizado, em atraso ou suspenso;
+		Consultar os dados relativos aos seus empréstimos;
+			Empréstimos em andamento e anteriores;
+		Cancelar uma reserva;
+
+14	Qualquer usuário pode realizar consultas ao acervo da biblioteca;
+	
+15	As consultas podem ser feitas em duas modalidades:
+		Por palavra-chave;
+		Por filtragem nos atributos dos livros;
+
+16	Na consulta, o sistema deve informar a situação de cada livro recuperado;
+		Disponível, Emprestado, Reservado ou Emprestado e Reservado.
+
+
+
+
+
+

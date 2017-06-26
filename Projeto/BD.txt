@@ -1,0 +1,34 @@
+Usuários:
+	Professores;
+		Matrícula, Nome, CPF, Endereço, E-Mail,telefones de contato e departamento;
+	
+	Alunos da universidade;
+		Matrícula, Nome, CPF, Endereço, E-Mail e telefones de contato, Código,; 
+	
+	Funcionários;
+		Matrícula, Nome e CPF;
+
+
+Departamento:
+	Identificação e nome;
+
+
+Curso:
+	Identificação, um nome e identificação departamento responsável;
+
+Livro:
+	Código, título, autores, editora, número da edição, ano de publicação e número de exemplares;
+
+Autor:
+	Identificação e nome;
+
+Editora:
+	Identificação e nome;
+
+==============
+Empréstimo:
+	Matrícula do usuário, a data do empréstimo, a data prevista para a entrega;
+
+Reserva:
+	Matrícula do usuário, o livro desejado, a data de realização, a data de validação e a data limite;
+

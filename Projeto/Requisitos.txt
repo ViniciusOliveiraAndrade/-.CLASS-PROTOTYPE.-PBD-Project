@@ -1,0 +1,100 @@
+Requisitos Funcionais:
+	Cadastrar Aluno
+	Remover Aluno
+	Atualizar Aluno
+	Buscar Aluno
+
+	Cadastrar Professor 
+	Remover Professor
+	Atualizar Professor
+	Buscar Professor
+
+	Cadastrar Funcionario 
+	Remover Funcionario
+	Atualizar Funcionario
+	Buscar Funcionario
+
+	Cadastrar Departamento 
+	Remover Departamento
+	Atualizar Departamento
+	Buscar Departamento
+
+	Cadastrar Curso
+	Remover Curso
+	Atualizar Curso
+	Buscar Curso
+
+	Cadastrar Livro
+	Remover Livro
+	Atualizar Livro
+	Buscar Livro
+
+	Cadastrar Autor
+	Remover Autor
+	Atualizar Autor
+	Buscar Autor
+
+	Cadastrar Emprestimo
+	Remover Emprestimo
+	Atualizar Emprestimo
+	Buscar Emprestimo
+
+	Cadastrar Reserva
+	Remover Reserva
+	Atualizar Reserva
+	Buscar Reserva
+
+	Consultar Usuarios
+	Suspender Usuarios
+	Consultar Emprestimos
+	Consultar Caixa
+	
+	Reservar Livro
+	Verificar Situação propria
+	Cancelar Reserva
+	
+	
+Requisitos Não-Funcionais:
+	
+	O sistema pode ser acessado por qaulquer pessoa.
+	
+	
+	Multa para atrasos
+	
+	Usuários em atraso ou com a conta suspensa não podem realizar empréstimos nem reservas;
+
+	
+	
+	Na consulta, o sistema deve informar a situação de cada livro recuperado;
+		Disponível, Emprestado, Reservado ou Emprestado e Reservado.
+	
+	
+	
+	
+	
+
+Requisitos Dominio:
+	
+	O professor so pode alugar 5 livros
+	O aluno so pode alugar 3 livros
+	
+	Empréstimos em andamento devem ser considerados no momento do empréstimo
+	Usuários que efetuam devolução com mais de 7 dias de atraso ficam com a conta suspensa por 30 dias;
+
+	As consultas podem ser feitas em duas modalidades:
+		Por palavra-chave;
+		Por filtragem nos atributos dos livros;	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+====================================
+	Cadastrar 
+	Remover 
+	Atualizar
+	Buscar
