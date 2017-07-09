@@ -1,9 +1,9 @@
-Usuários:
+﻿Usuários:
 	Professores;
-		Matrícula, Nome, CPF, Endereço, E-Mail,telefones de contato e departamento;
+		Matrícula, Nome, CPF, Endereço, E-Mail, telefones de contato e departamento;
 	
 	Alunos da universidade;
-		Matrícula, Nome, CPF, Endereço, E-Mail e telefones de contato, Código,; 
+		Matrícula, Nome, CPF, Endereço, E-Mail, telefones de contato e Código,; 
 	
 	Funcionários;
 		Matrícula, Nome e CPF;
