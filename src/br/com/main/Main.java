@@ -1,4 +1,4 @@
-package main;
+package br.com.main;
 
 public class Main {
 	

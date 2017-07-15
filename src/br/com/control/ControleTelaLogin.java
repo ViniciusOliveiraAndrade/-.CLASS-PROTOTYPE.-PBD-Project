@@ -1,9 +1,9 @@
-package control;
+package br.com.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import view.TelaLogin;
+import br.com.view.TelaLogin;
 
 public class ControleTelaLogin implements ActionListener{
 
