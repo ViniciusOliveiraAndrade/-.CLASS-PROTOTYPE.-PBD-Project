@@ -3,13 +3,13 @@ package br.com.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.com.view.TelaLogin;
+import br.com.view.TLogin;
 
 public class ControleTelaLogin implements ActionListener{
 
-	TelaLogin tela;
+	TLogin tela;
 
-	public ControleTelaLogin(TelaLogin tela){
+	public ControleTelaLogin(TLogin tela){
 		this.tela = tela;
 	}
 

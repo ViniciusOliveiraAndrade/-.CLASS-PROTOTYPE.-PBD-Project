@@ -2,9 +2,9 @@ package br.com.view;
 
 import javax.swing.JFrame;
 
-public class TelaLogin extends JFrame{
+public class TLogin extends JFrame{
 	
-	public TelaLogin(){
+	public TLogin(){
 		
 	}
 
