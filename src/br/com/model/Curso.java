@@ -1,14 +1,26 @@
+//Curso  (*id, nome, #id_departamento)
+
 package br.com.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Curso {
 	
+	@Id
+	@GeneratedValue
 	private int id;
+	
 	private int id_departamento;
 	
+	@Column(unique = true)
 	private String nome;
 	
 	
-	//Hibernate Constrocter
+
 	public Curso(){}
 	
 	
@@ -17,10 +29,10 @@ public class Curso {
 	public int getId() {
 		return id;
 	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	
+	/*
+	 * =========================================  GET and SET  ===================================================
+	 */
 
 	public int getId_departamento() {
 		return id_departamento;
@@ -37,6 +49,5 @@ public class Curso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
 	 
 }

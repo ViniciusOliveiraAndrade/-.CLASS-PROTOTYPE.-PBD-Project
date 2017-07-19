@@ -1,22 +1,31 @@
+//Departamento  (*id, nome)
+
 package br.com.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Departamento {
 	
+	@Id
+	@GeneratedValue
 	private int id; 
 	
+	@Column(unique = true)
 	private String nome;
 
 	
 	public Departamento(){}
 
-	
+	/*
+	 * =========================================  GET and SET  ===================================================
+	 */
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getNome() {
