@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import br.com.control.CTEscolhaEmprestimo;
+import br.com.controller.CTEscolhaEmprestimo;
 
 import java.awt.Color;
 import javax.swing.JButton;

@@ -1,4 +1,4 @@
-package br.com.control;
+package br.com.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
