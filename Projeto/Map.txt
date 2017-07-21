@@ -5,6 +5,6 @@
 -Funcionario  (*id, *matricula, cpf, nome)
 -Livro  (*id, *coidgo, titulo, numero_edição, ano_de_publicação, editora, numero_de_exemplares, #id_autor)
 -Reserva  (*id, data_realização, data_validaçao, data_limite, #id_livro, #id_usuario, #id_funcionario)
-Emprestismo  (*id, data_emprestimo, data_entrega, data_prevista_entrega, situação, multa, #id_usuario, #id_funcionario, #id_livro)
+-Emprestismo  (*id, data_emprestimo, data_entrega, data_prevista_entrega, situação, multa, #id_usuario, #id_funcionario, #id_livro)
 
 

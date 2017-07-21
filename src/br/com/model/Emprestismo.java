@@ -1,4 +1,4 @@
-//Reserva  (*id, data_realização, data_validaçao, data_limite, #id_livro, #id_usuario, #id_funcionario)
+//Emprestismo  (*id, data_emprestimo, data_entrega, data_prevista_entrega, situação, multa, #id_usuario, #id_funcionario, #id_livro)
 
 package br.com.model;
 
@@ -12,21 +12,25 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Reserva {
+public class Emprestismo {
 	
 	@Id
 	@GeneratedValue
 	private int id;
 	
 	@Temporal(TemporalType.DATE)
-	private Date data_realizacao;
+	private Date data_emprestimo;
 	
 	@Temporal(TemporalType.DATE)
-	private Date data_validacao;
+	private Date data_entrega;
 	
 	@Temporal(TemporalType.DATE)
-	private Date data_limite;
+	private Date data_prevista_entrega;
 
+	private String situacao;
+	
+	private float multa;
+	
 	@OneToOne
 	private Livro livro;
 	
@@ -36,7 +40,7 @@ public class Reserva {
 	@OneToOne
 	private Funciomario funciomario;
 	
-	public Reserva() {}
+	public Emprestismo() {}
 
 	/*
 	 * =========================================  GET and SET  ===================================================
@@ -48,30 +52,6 @@ public class Reserva {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public Date getData_realizacao() {
-		return data_realizacao;
-	}
-
-	public void setData_realizacao(Date data_realizacao) {
-		this.data_realizacao = data_realizacao;
-	}
-
-	public Date getData_validacao() {
-		return data_validacao;
-	}
-
-	public void setData_validacao(Date data_validacao) {
-		this.data_validacao = data_validacao;
-	}
-
-	public Date getData_limite() {
-		return data_limite;
-	}
-
-	public void setData_limite(Date data_limite) {
-		this.data_limite = data_limite;
 	}
 
 	public Livro getLivro() {
@@ -98,4 +78,45 @@ public class Reserva {
 		this.funciomario = funciomario;
 	}
 
+	public Date getData_emprestimo() {
+		return data_emprestimo;
+	}
+
+	public void setData_emprestimo(Date data_emprestimo) {
+		this.data_emprestimo = data_emprestimo;
+	}
+
+	public Date getData_entrega() {
+		return data_entrega;
+	}
+
+	public void setData_entrega(Date data_entrega) {
+		this.data_entrega = data_entrega;
+	}
+
+	public Date getData_prevista_entrega() {
+		return data_prevista_entrega;
+	}
+
+	public void setData_prevista_entrega(Date data_prevista_entrega) {
+		this.data_prevista_entrega = data_prevista_entrega;
+	}
+
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+
+	public float getMulta() {
+		return multa;
+	}
+
+	public void setMulta(float multa) {
+		this.multa = multa;
+	}
+	
+	
 }
