@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Funciomario {
+public class Funcionario {
 
 	@Id
 	@GeneratedValue
@@ -24,7 +24,7 @@ public class Funciomario {
 	private String nome;
 	
 	
-	public Funciomario() {}
+	public Funcionario() {}
 	
 	
 	/*

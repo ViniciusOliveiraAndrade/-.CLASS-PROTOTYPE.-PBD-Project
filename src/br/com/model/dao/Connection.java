@@ -14,8 +14,8 @@ public class Connection {
 	}
 
 	public static synchronized EntityManager getEntityManager() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("crudHibernatePU");
-		if (entityManager == null) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("pbd-PU");
+		if (entityManager == null || !entityManager.isOpen()) {
 			entityManager = factory.createEntityManager();
 		}
 		return entityManager;

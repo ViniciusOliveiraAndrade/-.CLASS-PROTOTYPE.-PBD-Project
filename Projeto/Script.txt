@@ -1,0 +1,201 @@
+
+    create table Autor (
+       id integer not null,
+        nome varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+
+    create table Curso (
+       id integer not null,
+        id_departamento integer not null,
+        nome varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+  
+    create table Departamento (
+       id integer not null,
+        nome varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+  
+    create table Emprestismo (
+       id integer not null,
+        data_emprestimo date,
+        data_entrega date,
+        data_prevista_entrega date,
+        multa float not null,
+        situacao varchar(255),
+        funciomario_id integer,
+        livro_id integer,
+        usuario_id integer,
+        primary key (id)
+    ) engine=InnoDB
+   
+    create table Funciomario (
+       id integer not null,
+        cpf integer,
+        matricula integer,
+        nome varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+  
+    create table hibernate_sequence (
+       next_val bigint
+    ) engine=InnoDB
+    
+    create table Livro (
+       id integer not null,
+        ano_publicacao datetime,
+        autor integer not null,
+        codigo integer,
+        editora varchar(255),
+        numero_edicao integer not null,
+        numero_exemplares integer not null,
+        titulo varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+   
+    create table Reserva (
+       id integer not null,
+        data_limite date,
+        data_realizacao date,
+        data_validacao date,
+        funciomario_id integer,
+        livro_id integer,
+        usuario_id integer,
+        primary key (id)
+    ) engine=InnoDB
+   
+    create table Usuario (
+       id integer not null,
+        codigo integer,
+        cpf varchar(255),
+        email varchar(255),
+        matricula integer,
+        nome varchar(255),
+        professor bit not null,
+        situacao varchar(255),
+        telefone varchar(255),
+        departamento_id integer,
+        primary key (id)
+    ) engine=InnoDB
+
+    
+    alter table Autor 
+       drop index UK_sjhm09yrajm28xgafxxr63s4a
+
+    
+    alter table Autor 
+       add constraint UK_sjhm09yrajm28xgafxxr63s4a unique (nome)
+
+    alter table Curso 
+       drop index UK_o7iw08duv7h299c3w99e3do4d
+ 
+    
+    alter table Curso 
+       add constraint UK_o7iw08duv7h299c3w99e3do4d unique (nome)
+
+    
+    alter table Departamento 
+       drop index UK_t3llx01h88orevrmbt9iapvvp
+
+    
+    alter table Departamento 
+       add constraint UK_t3llx01h88orevrmbt9iapvvp unique (nome)
+
+    
+    alter table Funciomario 
+       drop index UK_e8u5c65hyv0mb3ynmwuno5n7l
+
+    
+    alter table Funciomario 
+       add constraint UK_e8u5c65hyv0mb3ynmwuno5n7l unique (cpf)
+
+    
+    alter table Funciomario 
+       drop index UK_e2u2sdgcsjtw4n5kq8j0lfy9n
+
+    
+    alter table Funciomario 
+       add constraint UK_e2u2sdgcsjtw4n5kq8j0lfy9n unique (matricula)
+
+    
+    alter table Livro 
+       drop index UK_b6lqmrl7bvmcsx10xxmuc2o47
+
+    
+    alter table Livro 
+       add constraint UK_b6lqmrl7bvmcsx10xxmuc2o47 unique (codigo)
+
+    
+    alter table Usuario 
+       drop index UK_3fd5n7qqqjui232o7v5jmsws9
+ 
+    
+    alter table Usuario 
+       add constraint UK_3fd5n7qqqjui232o7v5jmsws9 unique (codigo)
+
+    
+    alter table Usuario 
+       drop index UK_898atepo5gx8dqj60c07k766b
+ 
+    
+    alter table Usuario 
+       add constraint UK_898atepo5gx8dqj60c07k766b unique (cpf)
+ 
+    
+    alter table Usuario 
+       drop index UK_4tdehxj7dh8ghfc68kbwbsbll
+ 
+    
+    alter table Usuario 
+       add constraint UK_4tdehxj7dh8ghfc68kbwbsbll unique (email)
+ 
+    
+    alter table Usuario 
+       drop index UK_2tfnybhum5qyk57ipicpgdohy
+ 
+    
+    alter table Usuario 
+       add constraint UK_2tfnybhum5qyk57ipicpgdohy unique (matricula)
+
+    alter table Emprestismo 
+
+       foreign key (funciomario_id) 
+       references Funciomario (id)
+
+    
+    alter table Emprestismo 
+
+       foreign key (livro_id) 
+       references Livro (id)
+
+    
+    alter table Emprestismo 
+
+       foreign key (usuario_id) 
+       references Usuario (id)
+
+    
+    alter table Reserva 
+
+       foreign key (funciomario_id) 
+       references Funciomario (id)
+ 
+    
+    alter table Reserva 
+
+       foreign key (livro_id) 
+       references Livro (id)
+
+    
+    alter table Reserva 
+
+       foreign key (usuario_id) 
+       references Usuario (id)
+
+    
+    alter table Usuario 
+       
+       foreign key (departamento_id) 
+       references Departamento (id)

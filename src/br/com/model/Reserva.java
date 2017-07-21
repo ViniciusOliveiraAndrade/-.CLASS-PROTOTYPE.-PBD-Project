@@ -34,7 +34,7 @@ public class Reserva {
 	private Usuario usuario;
 	
 	@OneToOne
-	private Funciomario funciomario;
+	private Funcionario funciomario;
 	
 	public Reserva() {}
 
@@ -90,11 +90,11 @@ public class Reserva {
 		this.usuario = usuario;
 	}
 
-	public Funciomario getFunciomario() {
+	public Funcionario getFunciomario() {
 		return funciomario;
 	}
 
-	public void setFunciomario(Funciomario funciomario) {
+	public void setFunciomario(Funcionario funciomario) {
 		this.funciomario = funciomario;
 	}
 

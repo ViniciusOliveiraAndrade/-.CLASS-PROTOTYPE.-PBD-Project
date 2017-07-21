@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Usuario {
@@ -15,10 +16,11 @@ public class Usuario {
 	private int id;
 
 	@Column(unique = true)
+	@GeneratedValue
 	private int matricula;
 
 	@Column(unique = true)
-	private int cpf;
+	private String cpf;
 
 	@Column(unique = true)
 	private int codigo;
@@ -32,14 +34,32 @@ public class Usuario {
 
 	private boolean professor;
 
-	private int id_departamento;
+	@OneToOne
+	private Departamento departamento;
 
 	public Usuario(){}
-	
+
+
+
+	public Usuario(int matricula, String cpf, int codigo, String email, String situacao, String nome, String telefone,
+			boolean professor) {
+		super();
+		this.matricula = matricula;
+		this.cpf = cpf;
+		this.codigo = codigo;
+		this.email = email;
+		this.situacao = situacao;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.professor = professor;
+	}
+
+
+
 	/*
 	 * =========================================  GET and SET  ===================================================
 	 */
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
@@ -72,12 +92,12 @@ public class Usuario {
 		this.telefone = telefone;
 	}
 
-	public int getId_departamento() {
-		return id_departamento;
+	public Departamento departamento() {
+		return departamento;
 	}
 
-	public void setId_departamento(int id_departamento) {
-		this.id_departamento = id_departamento;
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 	public int getMatricula() {
@@ -89,12 +109,12 @@ public class Usuario {
 	}
 
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
