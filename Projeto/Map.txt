@@ -1,7 +1,7 @@
 ﻿-Usuario  (*id,*matricula, nome, email, cpf, situação, telefone, tipoProfessor, codigo, #id_departamento)
 -Departamento  (*id, nome)
--Curso  (*id, nome, #id_departamento)
 -Autor  (*id, nome)
+-Curso  (*id, nome, #id_departamento)
 -Funcionario  (*id, *matricula, cpf, nome)
 -Livro  (*id, *coidgo, titulo, numero_edição, ano_de_publicação, editora, numero_de_exemplares, #id_autor)
 -Reserva  (*id, data_realização, data_validaçao, data_limite, #id_livro, #id_usuario, #id_funcionario)

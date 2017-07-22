@@ -22,7 +22,7 @@
 			<property name="hibernate.connection.password" value="root" />
 			
 			<!-- conexão com o banco: forma de atualização: create, update... -->
-			<property name="hibernate.hbm2ddl.auto" value="create" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 			
 			<!-- Opcional: DEBUG -->
 			<property name="hibernate.show_sql" value="true" />

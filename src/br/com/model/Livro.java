@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Livro {
@@ -24,7 +25,8 @@ public class Livro {
 	
 	private String titulo;
 	
-	private int autor;
+	@OneToOne
+	private Autor autor;
 	
 	private String editora;
 	
@@ -72,11 +74,11 @@ public class Livro {
 		this.titulo = titulo;
 	}
 
-	public int getAutor() {
+	public Autor getAutor() {
 		return autor;
 	}
 
-	public void setAutor(int autores) {
+	public void setAutor(Autor autores) {
 		this.autor = autores;
 	}
 

@@ -1,0 +1,91 @@
+    create table Autor (
+		id integer not null,
+        nome varchar(255) unique,
+        primary key (id)
+    );
+    
+    create table Curso (
+		id integer not null,
+        id_departamento integer not null,
+        nome varchar(255) unique,
+        primary key (id)
+    );
+    
+    create table Departamento (
+		id integer not null,
+        nome varchar(255) unique,
+        primary key (id)
+    );
+    create table Funcionario (
+		id integer not null,
+        cpf integer unique,
+        matricula integer unique,
+        nome varchar(255),
+        primary key (id)
+    );
+	create table Usuario (
+		id integer not null,
+        codigo integer unique,
+        cpf varchar(255) unique,
+        email varchar(255) unique,
+        matricula integer unique,
+        nome varchar(255),
+        professor bit not null,
+        situacao varchar(255),
+        telefone varchar(255),
+        departamento_id integer,
+        primary key (id),
+		foreign key (departamento_id) 
+		references Departamento (id)
+    );
+    
+    create table Livro (
+		id integer not null,
+        ano_publicacao datetime,
+        codigo integer unique,
+        editora varchar(255),
+        numero_edicao integer not null,
+        numero_exemplares integer not null,
+        titulo varchar(255),
+        autor_id integer,
+        primary key (id),
+		foreign key (autor_id) 
+		references Autor (id)
+    );
+    
+    create table Reserva (
+		id integer not null,
+        data_limite date,
+        data_realizacao date,
+        data_validacao date,
+        funcionario_id integer,
+        livro_id integer,
+        usuario_id integer,
+        primary key (id),
+		foreign key (funcionario_id) 
+		references Funcionario (id),
+		foreign key (livro_id) 
+		references Livro (id),
+		foreign key (usuario_id) 
+		references Usuario (id)
+    );
+	
+    create table Emprestismo (
+		id integer not null,
+        data_emprestimo date,
+        data_entrega date,
+        data_prevista_entrega date,
+        multa float not null,
+        situacao varchar(255),
+        funcionario_id integer,
+        livro_id integer,
+        usuario_id integer,
+        primary key (id),
+		foreign key (funcionario_id) 
+		references Funcionario (id),
+		foreign key (livro_id) 
+		references Livro (id),
+		foreign key (usuario_id) 
+		references Usuario (id)
+    );
+   

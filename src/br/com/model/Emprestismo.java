@@ -38,7 +38,7 @@ public class Emprestismo {
 	private Usuario usuario;
 	
 	@OneToOne
-	private Funcionario funciomario;
+	private Funcionario funcionario;
 	
 	public Emprestismo() {}
 
@@ -70,12 +70,12 @@ public class Emprestismo {
 		this.usuario = usuario;
 	}
 
-	public Funcionario getFunciomario() {
-		return funciomario;
+	public Funcionario getFuncionario() {
+		return funcionario;
 	}
 
-	public void setFunciomario(Funcionario funciomario) {
-		this.funciomario = funciomario;
+	public void setFunciomario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 
 	public Date getData_emprestimo() {
