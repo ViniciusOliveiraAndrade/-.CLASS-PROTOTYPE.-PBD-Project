@@ -2,6 +2,6 @@ package br.com.view;
 
 import javax.swing.JFrame;
 
-public class TStatusUsuario extends JFrame {
+public class TAcervoBiblioteca extends JFrame{
 
 }

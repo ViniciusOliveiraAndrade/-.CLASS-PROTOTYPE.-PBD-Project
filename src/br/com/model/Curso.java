@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Curso {
@@ -14,7 +15,8 @@ public class Curso {
 	@GeneratedValue
 	private int id;
 	
-	private int id_departamento;
+	@OneToOne
+	private Departamento departamento;
 	
 	@Column(unique = true)
 	private String nome;
@@ -34,12 +36,12 @@ public class Curso {
 	 * =========================================  GET and SET  ===================================================
 	 */
 
-	public int getId_departamento() {
-		return id_departamento;
+	public Departamento getDepartamento() {
+		return departamento;
 	}
 
-	public void setId_departamento(int id_departamento) {
-		this.id_departamento = id_departamento;
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 
 	public String getNome() {

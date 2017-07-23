@@ -8,7 +8,7 @@ import br.com.model.Livro;
 
 public class LivroDAO {
 	@SuppressWarnings("static-access")
-	public void persist(Livro object) {
+	public static synchronized void persist(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().persist(object);
@@ -21,7 +21,7 @@ public class LivroDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void remove(Livro object) {
+	public static synchronized void remove(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			object = Connection.getInstance().getEntityManager().find(Livro.class, object.getId());
@@ -35,7 +35,7 @@ public class LivroDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void merge(Livro object) {
+	public static synchronized void merge(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().merge(object);
@@ -49,16 +49,16 @@ public class LivroDAO {
 	}
 	
 	@SuppressWarnings("static-access")
-	public Livro getById(final int id) {
+	public static synchronized Livro getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Livro.class, id);
 	}
 
 	@SuppressWarnings({ "unchecked", "static-access" })
-	public List<Livro> findAll() {
+	public static synchronized List<Livro> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Livro.class.getName()).getResultList();
 	}
 
-	public void removeById(final int id) {
+	public static synchronized void removeById(final int id) {
 		try {
 			Livro cliente = getById(id);
 			remove(cliente);
@@ -66,5 +66,5 @@ public class LivroDAO {
 			ex.printStackTrace();
 		}
 	}
-
+	
 }

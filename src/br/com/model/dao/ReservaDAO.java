@@ -7,7 +7,7 @@ import br.com.model.Reserva;
 
 public class ReservaDAO {
 	@SuppressWarnings("static-access")
-	public void persist(Reserva object) {
+	public static synchronized void persist(Reserva object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().persist(object);
@@ -20,7 +20,7 @@ public class ReservaDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void remove(Reserva object) {
+	public static synchronized void remove(Reserva object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			object = Connection.getInstance().getEntityManager().find(Reserva.class, object.getId());
@@ -34,7 +34,7 @@ public class ReservaDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void merge(Reserva object) {
+	public static synchronized void merge(Reserva object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().merge(object);
@@ -48,16 +48,16 @@ public class ReservaDAO {
 	}
 	
 	@SuppressWarnings("static-access")
-	public Reserva getById(final int id) {
+	public static synchronized Reserva getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Reserva.class, id);
 	}
 
 	@SuppressWarnings({ "unchecked", "static-access" })
-	public List<Reserva> findAll() {
+	public static synchronized List<Reserva> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Reserva.class.getName()).getResultList();
 	}
 
-	public void removeById(final int id) {
+	public static synchronized void removeById(final int id) {
 		try {
 			Reserva cliente = getById(id);
 			remove(cliente);

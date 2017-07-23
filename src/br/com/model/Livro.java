@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Livro {
@@ -30,9 +32,24 @@ public class Livro {
 	
 	private String editora;
 	
+	@Temporal(TemporalType.DATE)
 	private Date ano_publicacao;
 	
 	public Livro(){}
+	
+	public Livro(int codigo, int numero_edicao, int numero_exemplares, String titulo, Autor autor, String editora,
+			Date ano_publicacao) {
+		super();
+		this.codigo = codigo;
+		this.numero_edicao = numero_edicao;
+		this.numero_exemplares = numero_exemplares;
+		this.titulo = titulo;
+		this.autor = autor;
+		this.editora = editora;
+		this.ano_publicacao = ano_publicacao;
+	}
+
+
 
 	/*
 	 * =========================================  GET and SET  ===================================================

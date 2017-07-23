@@ -2,6 +2,7 @@
 
 package br.com.model;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Emprestismo {
+public class Emprestimo {
 	
 	@Id
 	@GeneratedValue
@@ -29,7 +30,7 @@ public class Emprestismo {
 
 	private String situacao;
 	
-	private float multa;
+	private double multa;
 	
 	@OneToOne
 	private Livro livro;
@@ -38,9 +39,30 @@ public class Emprestismo {
 	private Usuario usuario;
 	
 	@OneToOne
-	private Funcionario funcionario;
+	private Funcionario funcionario_Emprestimo;
+
+	@OneToOne
+	private Funcionario funcionario_Devolucao;
 	
-	public Emprestismo() {}
+
+	
+	public Emprestimo() {}
+	
+	public Emprestimo(Date data_emprestimo, String situacao, double multa, Livro livro, Usuario usuario, Funcionario funcionario) {
+		super();
+		this.data_emprestimo = data_emprestimo;
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(data_emprestimo); 
+		c.add(Calendar.DATE, 5);
+		this.data_prevista_entrega = c.getTime();
+		this.situacao = situacao;
+		this.multa = multa;
+		this.livro = livro;
+		this.usuario = usuario;
+		this.funcionario_Emprestimo = funcionario;
+	}
+
+
 
 	/*
 	 * =========================================  GET and SET  ===================================================
@@ -70,12 +92,20 @@ public class Emprestismo {
 		this.usuario = usuario;
 	}
 
-	public Funcionario getFuncionario() {
-		return funcionario;
+	public Funcionario getFuncionario_Emprestimo() {
+		return funcionario_Emprestimo;
 	}
 
-	public void setFunciomario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+	public void setFuncionario_Emprestimo(Funcionario funcionario_Emprestimo) {
+		this.funcionario_Emprestimo = funcionario_Emprestimo;
+	}
+
+	public Funcionario getFuncionario_Devolucao() {
+		return funcionario_Devolucao;
+	}
+
+	public void setFuncionario_Devolucao(Funcionario funcionario_Defolucao) {
+		this.funcionario_Devolucao = funcionario_Defolucao;
 	}
 
 	public Date getData_emprestimo() {
@@ -110,11 +140,11 @@ public class Emprestismo {
 		this.situacao = situacao;
 	}
 
-	public float getMulta() {
+	public double getMulta() {
 		return multa;
 	}
 
-	public void setMulta(float multa) {
+	public void setMulta(double multa) {
 		this.multa = multa;
 	}
 	

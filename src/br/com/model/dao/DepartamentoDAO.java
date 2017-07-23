@@ -7,7 +7,7 @@ import br.com.model.Departamento;
 
 public class DepartamentoDAO {
 	@SuppressWarnings("static-access")
-	public void persist(Departamento object) {
+	public static synchronized void persist(Departamento object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().persist(object);
@@ -20,7 +20,7 @@ public class DepartamentoDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void remove(Departamento object) {
+	public static synchronized void remove(Departamento object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			object = Connection.getInstance().getEntityManager().find(Departamento.class, object.getId());
@@ -34,7 +34,7 @@ public class DepartamentoDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void merge(Departamento object) {
+	public static synchronized void merge(Departamento object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().merge(object);
@@ -48,16 +48,16 @@ public class DepartamentoDAO {
 	}
 	
 	@SuppressWarnings("static-access")
-	public Departamento getById(final int id) {
+	public static synchronized Departamento getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Departamento.class, id);
 	}
 
 	@SuppressWarnings({ "unchecked", "static-access" })
-	public List<Departamento> findAll() {
+	public static synchronized List<Departamento> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Departamento.class.getName()).getResultList();
 	}
 
-	public void removeById(final int id) {
+	public static synchronized void removeById(final int id) {
 		try {
 			Departamento cliente = getById(id);
 			remove(cliente);

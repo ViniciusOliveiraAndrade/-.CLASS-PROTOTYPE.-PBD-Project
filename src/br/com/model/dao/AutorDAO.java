@@ -7,7 +7,7 @@ import br.com.model.Autor;
 
 public class AutorDAO {
 	@SuppressWarnings("static-access")
-	public void persist(Autor object) {
+	public static synchronized void persist(Autor object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().persist(object);
@@ -20,7 +20,7 @@ public class AutorDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void remove(Autor object) {
+	public static synchronized void remove(Autor object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			object = Connection.getInstance().getEntityManager().find(Autor.class, object.getId());
@@ -34,7 +34,7 @@ public class AutorDAO {
 		}
 	}
 	@SuppressWarnings("static-access")
-	public void merge(Autor object) {
+	public static synchronized void merge(Autor object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
 			Connection.getInstance().getEntityManager().merge(object);
@@ -48,16 +48,16 @@ public class AutorDAO {
 	}
 	
 	@SuppressWarnings("static-access")
-	public Autor getById(final int id) {
+	public static synchronized Autor getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Autor.class, id);
 	}
 
 	@SuppressWarnings({ "unchecked", "static-access" })
-	public List<Autor> findAll() {
+	public static synchronized List<Autor> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Autor.class.getName()).getResultList();
 	}
 
-	public void removeById(final int id) {
+	public static synchronized void removeById(final int id) {
 		try {
 			Autor cliente = getById(id);
 			remove(cliente);
