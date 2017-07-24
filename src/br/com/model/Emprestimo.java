@@ -8,6 +8,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,15 +34,19 @@ public class Emprestimo {
 	private double multa;
 	
 	@OneToOne
+	@JoinColumn(name = "livro_id")
 	private Livro livro;
 	
 	@OneToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
 	@OneToOne
+	@JoinColumn(name = "funcionario_Emprestimo_id")
 	private Funcionario funcionario_Emprestimo;
 
 	@OneToOne
+	@JoinColumn(name = "funcionario_Devolucao_id")
 	private Funcionario funcionario_Devolucao;
 	
 

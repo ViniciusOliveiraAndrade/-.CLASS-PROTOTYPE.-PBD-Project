@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,12 +29,15 @@ public class Reserva {
 	private Date data_limite;
 
 	@OneToOne
+	@JoinColumn(name = "livro_id")
 	private Livro livro;
 	
 	@OneToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 	
 	@OneToOne
+	@JoinColumn(name = "funcionario_id")
 	private Funcionario funcionario;
 	
 	public Reserva() {}

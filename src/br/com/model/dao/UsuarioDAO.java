@@ -2,6 +2,8 @@ package br.com.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import br.com.model.Usuario;
 
 public class UsuarioDAO {
@@ -44,6 +46,24 @@ public class UsuarioDAO {
 		}finally {
 			Connection.getInstance().getEntityManager().close();
 		}
+	}
+	@SuppressWarnings("static-access")
+	public static synchronized Usuario getByCpf(String cpf) {
+		Usuario u = null;
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select usuario from Usuario usuario where cpf = ?");
+            query.setParameter(0, cpf);
+            u = (Usuario) query.getSingleResult();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}finally {
+			Connection.getInstance().getEntityManager().close();
+		}
+		
+		return u;
 	}
 	
 	@SuppressWarnings("static-access")

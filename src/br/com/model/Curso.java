@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -16,6 +17,7 @@ public class Curso {
 	private int id;
 	
 	@OneToOne
+	@JoinColumn(name = "departamento_id")
 	private Departamento departamento;
 	
 	@Column(unique = true)

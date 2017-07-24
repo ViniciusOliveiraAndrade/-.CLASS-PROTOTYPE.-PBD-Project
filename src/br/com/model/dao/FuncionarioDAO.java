@@ -2,6 +2,8 @@ package br.com.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import br.com.model.Funcionario;
 
 
@@ -47,6 +49,24 @@ public class FuncionarioDAO {
 		}
 	}
 	
+	@SuppressWarnings("static-access")
+	public static synchronized Funcionario getByCpf(String cpf) {
+		Funcionario u = null;
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select funcionario from Funcionario funcionario where cpf = ?");
+            query.setParameter(0, cpf);
+            u = (Funcionario) query.getSingleResult();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}finally {
+			Connection.getInstance().getEntityManager().close();
+		}
+		
+		return u;
+	}
 	@SuppressWarnings("static-access")
 	public static synchronized Funcionario getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Funcionario.class, id);

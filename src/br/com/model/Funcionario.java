@@ -19,7 +19,7 @@ public class Funcionario {
 	private int matricula;
 
 	@Column(unique = true)
-	private int cpf;
+	private String cpf;
 
 	private String nome;
 	
@@ -27,6 +27,16 @@ public class Funcionario {
 	public Funcionario() {}
 	
 	
+	
+	public Funcionario(int matricula, String cpf, String nome) {
+		super();
+		this.matricula = matricula;
+		this.cpf = cpf;
+		this.nome = nome;
+	}
+
+
+
 	/*
 	 * =========================================  GET and SET  ===================================================
 	 */
@@ -43,11 +53,11 @@ public class Funcionario {
 		this.matricula = matricula;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
