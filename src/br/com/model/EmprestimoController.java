@@ -3,14 +3,23 @@ package br.com.model;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.swing.JOptionPane;
+
 import br.com.model.dao.EmprestimoDAO;
 
 public class EmprestimoController {
 	
 	
 	public void criarEmprestimo(Livro livro,Usuario usuario, Funcionario funcionario) {
-		Emprestimo emprestimo = new Emprestimo(new Date(), "Em andamento"	, 0.0, livro, usuario, funcionario);
-		EmprestimoDAO.persist(emprestimo);
+		int qt = Math.toIntExact(EmprestimoDAO.getQuantidadeEmprestimos(usuario.getCpf()));
+		
+		if((usuario.isProfessor() &&  qt < 5)|| (!usuario.isProfessor() && qt <3 ) ) {
+			Emprestimo emprestimo = new Emprestimo(new Date(), "Em andamento"	, 0.0, livro, usuario, funcionario);
+			EmprestimoDAO.persist(emprestimo);
+		}else {
+			JOptionPane.showMessageDialog(null, "Erro:Numero máximo de emprestimo");
+		}
+		
 	}
 	
 	public double devolverEmprestimo(Emprestimo emprestimo,Funcionario funcionario) {

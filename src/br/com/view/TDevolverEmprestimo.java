@@ -11,6 +11,9 @@ import javax.swing.JButton;
 
 public class TDevolverEmprestimo extends JFrame{
 	
+
+	private static final long serialVersionUID = 1L;
+
 	private Funcionario funcionarioLogado;
 
 	private JTextField idEmprestimoF;

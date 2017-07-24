@@ -2,7 +2,10 @@ package br.com.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import br.com.model.Emprestimo;
+import br.com.model.Usuario;
 
 
 public class EmprestimoDAO {
@@ -45,6 +48,45 @@ public class EmprestimoDAO {
 		}finally {
 			Connection.getInstance().getEntityManager().close();
 		}
+	}
+	
+	@SuppressWarnings({ "static-access", "unchecked" })
+	public static synchronized List<Emprestimo> getByCpf(String cpf) {
+		List<Emprestimo> emprestimos = null;
+		Usuario u = UsuarioDAO.getByCpf(cpf);
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select emprestimo from Emprestimo emprestimo where usuario_id = ?");
+            query.setParameter(0, u.getId());
+            emprestimos =  query.getResultList();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}finally {
+			Connection.getInstance().getEntityManager().close();
+		}
+		
+		return emprestimos;
+	}
+	@SuppressWarnings({ "static-access" })
+	public static synchronized long getQuantidadeEmprestimos(String cpf) {
+		long qt = 0;
+		Usuario u = UsuarioDAO.getByCpf(cpf);
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select count(emprestimo) from Emprestimo emprestimo where usuario_id = ? and emprestimo.situacao = 'Em andamento'");
+            query.setParameter(0, u.getId());
+            qt = (long) query.getSingleResult();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}finally {
+			Connection.getInstance().getEntityManager().close();
+		}
+		
+		return qt;
 	}
 	
 	@SuppressWarnings("static-access")

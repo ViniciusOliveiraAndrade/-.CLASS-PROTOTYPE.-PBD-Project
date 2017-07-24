@@ -1,28 +1,28 @@
 package br.com.main;
 
 
-import java.util.Date;
-import java.util.List;
-
-import br.com.model.Autor;
-import br.com.model.Emprestimo;
-import br.com.model.EmprestimoController;
-import br.com.model.Funcionario;
-import br.com.model.Livro;
-import br.com.model.Usuario;
-import br.com.model.dao.AutorDAO;
-import br.com.model.dao.Connection;
-import br.com.model.dao.EmprestimoDAO;
-import br.com.model.dao.FuncionarioDAO;
-import br.com.model.dao.LivroDAO;
-import br.com.model.dao.UsuarioDAO;
-import br.com.view.TCadastrarEmprestimo;
+//import java.util.Date;
+//import java.util.List;
+//
+//import br.com.model.Autor;
+//import br.com.model.Emprestimo;
+//import br.com.model.EmprestimoController;
+//import br.com.model.Funcionario;
+//import br.com.model.Livro;
+//import br.com.model.Usuario;
+//import br.com.model.dao.AutorDAO;
+//import br.com.model.dao.Connection;
+//import br.com.model.dao.EmprestimoDAO;
+//import br.com.model.dao.FuncionarioDAO;
+//import br.com.model.dao.LivroDAO;
+//import br.com.model.dao.UsuarioDAO;
+//import br.com.view.TCadastrarEmprestimo;
 import br.com.view.TInicio;
 
 public class Main {
 
 	public static void main(String[] args) {
-//		new TInicio();
+		new TInicio();
 //		Connection.getInstance().getEntityManager();
 		//		Autor autorCriado = new Autor();
 		//		autorCriado.setNome("vinicius");
@@ -55,6 +55,13 @@ public class Main {
 		//		new TCadastrarEmprestimo(FuncionarioDAO.getByCpf("10602066417"));	
 		
 //		System.out.println(EmprestimoDAO.getById(4).getUsuario().getEmail());
-
-	} 
+//		System.out.println(EmprestimoDAO.getQuantidadeEmprestimos("10602066417"));
+//		List<Emprestimo> meusEmprestimos = EmprestimoDAO.getByCpf("10602066417");
+//		for (int i = 0; i < meusEmprestimos.size(); i++) {
+//			Emprestimo e = meusEmprestimos.get(i); 
+//			System.out.println(""+e.getId()+""+e.getLivro().getTitulo()+""+e.getSituacao()+""+e.getData_emprestimo()+""+e.getData_prevista_entrega()+""+""+""+e.getMulta()+""+e.getFuncionario_Emprestimo().getNome()+""+"");
+			
+//		}
+	}
+		
 }

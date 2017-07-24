@@ -12,6 +12,9 @@ import java.awt.Font;
 
 public class TCadastrarEmprestimo extends JFrame{
 	
+	
+	private static final long serialVersionUID = 1L;
+
 	private Funcionario funcionarioLogado;
 	
 	private JTextField cpfF;
