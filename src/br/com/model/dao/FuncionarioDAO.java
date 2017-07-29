@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.com.model.Funcionario;
+import br.com.model.beans.Funcionario;
 
 
 public class FuncionarioDAO {

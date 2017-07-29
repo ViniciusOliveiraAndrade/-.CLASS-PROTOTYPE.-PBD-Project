@@ -1,6 +1,6 @@
 //Funcionario  (*id, *matricula, cpf, nome)
 
-package br.com.model;
+package br.com.model.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -3,7 +3,8 @@ package br.com.view;
 import javax.swing.JFrame;
 
 import br.com.controller.CTMeusEmprestimos;
-import br.com.model.Usuario;
+import br.com.model.beans.Usuario;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;

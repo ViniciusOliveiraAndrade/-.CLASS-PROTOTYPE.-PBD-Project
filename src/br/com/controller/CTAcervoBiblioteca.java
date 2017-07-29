@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import br.com.model.Livro;
-import br.com.model.LivroController;
+import br.com.model.beans.Livro;
+import br.com.model.controller.LivroController;
 import br.com.view.TAcervoBiblioteca;
 
 public class CTAcervoBiblioteca implements ActionListener {

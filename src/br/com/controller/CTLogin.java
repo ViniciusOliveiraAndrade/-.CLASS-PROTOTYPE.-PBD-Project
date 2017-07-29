@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import br.com.model.LoginController;
+import br.com.model.controller.LoginController;
 import br.com.view.TFuncionario;
 import br.com.view.TLogin;
 import br.com.view.TUsuario;

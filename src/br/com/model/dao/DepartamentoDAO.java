@@ -2,7 +2,7 @@ package br.com.model.dao;
 
 import java.util.List;
 
-import br.com.model.Departamento;
+import br.com.model.beans.Departamento;
 
 
 public class DepartamentoDAO {

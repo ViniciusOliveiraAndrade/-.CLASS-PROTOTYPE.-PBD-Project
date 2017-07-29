@@ -1,6 +1,6 @@
 //Livro  (*id, *coidgo, titulo, numero_edição, ano_de_publicação, editora, numero_de_exemplares, #id_autor)
 
-package br.com.model;
+package br.com.model.beans;
 
 import java.util.Date;
 

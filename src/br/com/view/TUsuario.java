@@ -3,7 +3,8 @@ package br.com.view;
 import javax.swing.JFrame;
 
 import br.com.controller.CTUsuario;
-import br.com.model.Usuario;
+import br.com.model.beans.Usuario;
+
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.Font;

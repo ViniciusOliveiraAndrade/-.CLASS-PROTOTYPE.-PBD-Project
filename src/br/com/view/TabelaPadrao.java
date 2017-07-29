@@ -3,6 +3,8 @@ package br.com.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,7 +26,7 @@ public class TabelaPadrao extends JPanel{
 		
 		setBorder(new TitledBorder(new LineBorder(new Color(128, 128, 128), 2, true), titulo, TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		setBackground(Color.WHITE);
-		setLayout(new BorderLayout(0, 0));
+		setLayout(new BorderLayout(0,0));
 		
 		model = new DefaultTableModel();
 		
@@ -44,9 +46,17 @@ public class TabelaPadrao extends JPanel{
 	/*
 	 * =========================================  GET and SET  ===================================================
 	 */
-	
+	public void setColumn(Object[] coolumn) {
+		for (int i = 0; i < coolumn.length; i++) {
+			this.model.addColumn(coolumn[i]);
+		}
+	}
+	public void setRow(Object[] row) {
+		this.model.addRow(row);
+	}
 	public DefaultTableModel getModel() {
 		return model;
 	}
+	
 	
 }

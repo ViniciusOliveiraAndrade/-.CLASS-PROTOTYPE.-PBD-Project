@@ -1,6 +1,6 @@
 //Reserva  (*id, data_realização, data_validaçao, data_limite, #id_livro, #id_usuario, #id_funcionario)
 
-package br.com.model;
+package br.com.model.beans;
 
 import java.util.Date;
 

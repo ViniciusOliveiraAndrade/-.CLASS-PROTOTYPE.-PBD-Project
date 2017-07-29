@@ -3,7 +3,8 @@ package br.com.view;
 import javax.swing.JFrame;
 
 import br.com.controller.CTFuncinario;
-import br.com.model.Funcionario;
+import br.com.model.beans.Funcionario;
+
 import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.Font;

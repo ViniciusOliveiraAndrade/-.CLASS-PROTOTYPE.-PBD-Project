@@ -1,7 +1,9 @@
-package br.com.model;
+package br.com.model.controller;
 
 import java.util.List;
 
+import br.com.model.beans.Funcionario;
+import br.com.model.beans.Usuario;
 import br.com.model.dao.FuncionarioDAO;
 import br.com.model.dao.UsuarioDAO;
 

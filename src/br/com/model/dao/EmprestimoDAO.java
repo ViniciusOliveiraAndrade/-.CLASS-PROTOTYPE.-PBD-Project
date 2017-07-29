@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.Query;
 
-import br.com.model.Emprestimo;
-import br.com.model.Usuario;
+import br.com.model.beans.Emprestimo;
+import br.com.model.beans.Usuario;
 
 
 public class EmprestimoDAO {

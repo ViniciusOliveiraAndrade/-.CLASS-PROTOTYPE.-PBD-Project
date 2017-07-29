@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import br.com.model.EmprestimoController;
+import br.com.model.controller.EmprestimoController;
 import br.com.model.dao.EmprestimoDAO;
 import br.com.view.TDevolverEmprestimo;
 

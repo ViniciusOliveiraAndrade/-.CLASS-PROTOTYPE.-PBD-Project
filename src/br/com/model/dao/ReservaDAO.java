@@ -2,7 +2,7 @@ package br.com.model.dao;
 
 import java.util.List;
 
-import br.com.model.Reserva;
+import br.com.model.beans.Reserva;
 
 
 public class ReservaDAO {

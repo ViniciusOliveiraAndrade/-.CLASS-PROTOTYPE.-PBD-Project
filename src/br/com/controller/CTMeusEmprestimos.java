@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import br.com.model.Emprestimo;
+import br.com.model.beans.Emprestimo;
 import br.com.model.dao.EmprestimoDAO;
 import br.com.view.TMeusEmprestimos;
 

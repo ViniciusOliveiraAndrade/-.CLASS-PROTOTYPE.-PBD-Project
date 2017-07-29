@@ -1,4 +1,4 @@
-package br.com.model;
+package br.com.model.controller;
 
 public class UsuarioController {
 	

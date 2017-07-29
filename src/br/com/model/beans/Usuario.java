@@ -1,6 +1,6 @@
 //Usuario  (*id,*matricula, nome, email, cpf, situação, telefone, tipoProfessor, codigo, #id_departamento)
 
-package br.com.model;
+package br.com.model.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

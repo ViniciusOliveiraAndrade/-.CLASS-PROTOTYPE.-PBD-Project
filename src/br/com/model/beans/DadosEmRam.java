@@ -1,4 +1,4 @@
-package br.com.model;
+package br.com.model.beans;
 
 import java.util.ArrayList;
 import java.util.List;

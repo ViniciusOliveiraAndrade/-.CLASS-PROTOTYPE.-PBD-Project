@@ -1,6 +1,6 @@
 //Emprestismo  (*id, data_emprestimo, data_entrega, data_prevista_entrega, situação, multa, #id_usuario, #id_funcionario, #id_livro)
 
-package br.com.model;
+package br.com.model.beans;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -3,7 +3,7 @@ package br.com.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.com.model.EmprestimoController;
+import br.com.model.controller.EmprestimoController;
 import br.com.model.dao.LivroDAO;
 import br.com.model.dao.UsuarioDAO;
 import br.com.view.TCadastrarEmprestimo;

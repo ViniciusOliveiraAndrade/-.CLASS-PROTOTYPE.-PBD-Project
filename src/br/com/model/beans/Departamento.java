@@ -1,6 +1,6 @@
-//Autor  (*id, nome)
+//Departamento  (*id, nome)
 
-package br.com.model;
+package br.com.model.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Autor {
+public class Departamento {
 	
 	@Id
 	@GeneratedValue
@@ -16,9 +16,9 @@ public class Autor {
 	
 	@Column(unique = true)
 	private String nome;
+
 	
-	
-	public Autor(){}
+	public Departamento(){}
 
 	/*
 	 * =========================================  GET and SET  ===================================================

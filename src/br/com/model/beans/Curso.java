@@ -1,6 +1,6 @@
 //Curso  (*id, nome, #id_departamento)
 
-package br.com.model;
+package br.com.model.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

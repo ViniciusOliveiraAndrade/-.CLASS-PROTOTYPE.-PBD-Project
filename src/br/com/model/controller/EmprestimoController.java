@@ -1,10 +1,14 @@
-package br.com.model;
+package br.com.model.controller;
 
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import br.com.model.beans.Emprestimo;
+import br.com.model.beans.Funcionario;
+import br.com.model.beans.Livro;
+import br.com.model.beans.Usuario;
 import br.com.model.dao.EmprestimoDAO;
 
 public class EmprestimoController {

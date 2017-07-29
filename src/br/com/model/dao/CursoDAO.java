@@ -2,7 +2,7 @@ package br.com.model.dao;
 
 import java.util.List;
 
-import br.com.model.Curso;
+import br.com.model.beans.Curso;
 
 
 public class CursoDAO {

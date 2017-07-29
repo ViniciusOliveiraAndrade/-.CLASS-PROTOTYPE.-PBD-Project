@@ -2,7 +2,7 @@ package br.com.model.dao;
 
 import java.util.List;
 
-import br.com.model.Autor;
+import br.com.model.beans.Autor;
 
 
 public class AutorDAO {
