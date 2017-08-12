@@ -1,28 +1,26 @@
 package br.com.view;
 
-import javax.swing.JFrame;
-import java.awt.GridBagLayout;
-import javax.swing.JLabel;
-import java.awt.GridBagConstraints;
 import java.awt.BorderLayout;
-import javax.swing.JPanel;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.LineBorder;
 import java.awt.Color;
-import java.awt.Insets;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JSpinner;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
-public class TCUsuario extends JFrame {
-
+public class TAUsuario extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private boolean professor;
 	private JTextField codigoField;
 	private JTextField matriculaField;
-
-
 
 	private JSpinner departamentosFields;
 	private JTextField nomeField;
@@ -34,16 +32,20 @@ public class TCUsuario extends JFrame {
 	private JButton cancelarButton;
 	private JButton limparButton;
 	private JButton cadastrarButton;
-	
-	public TCUsuario(boolean professor) {
+	private JTextField textField;
+	private final JLabel label = new JLabel("");
+
+	public TAUsuario(boolean professor) {
+		
+		
 		getContentPane().setBackground(Color.WHITE);
-		setSize(584,190);
+		setSize(623,268);
 		this.professor = professor;
 		getContentPane().setLayout(new BorderLayout(0, 0));
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
-		panel.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Cadastro ", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Dados", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		getContentPane().add(panel, BorderLayout.CENTER);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -214,35 +216,58 @@ public class TCUsuario extends JFrame {
 		gbc_txtRegularizado.gridy = 4;
 		panel.add(txtRegularizado, gbc_txtRegularizado);
 		txtRegularizado.setColumns(10);
-
-		cancelarButton = new JButton("Cancelar");
-		GridBagConstraints gbc_cancelarButton = new GridBagConstraints();
-		gbc_cancelarButton.insets = new Insets(0, 0, 5, 5);
-		gbc_cancelarButton.gridx = 6;
-		gbc_cancelarButton.gridy = 6;
-		panel.add(cancelarButton, gbc_cancelarButton);
-
-		limparButton = new JButton("Limpar");
-		limparButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		GridBagConstraints gbc_limparButton = new GridBagConstraints();
-		gbc_limparButton.insets = new Insets(0, 0, 5, 5);
-		gbc_limparButton.gridx = 9;
-		gbc_limparButton.gridy = 6;
-		panel.add(limparButton, gbc_limparButton);
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.insets = new Insets(0, 0, 5, 5);
+		gbc_label.gridx = 17;
+		gbc_label.gridy = 6;
+		panel.add(label, gbc_label);
 		
-		cadastrarButton = new JButton("Cadastrar");
-		cadastrarButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		GridBagConstraints gbc_cadastrarButton = new GridBagConstraints();
-		gbc_cadastrarButton.insets = new Insets(0, 0, 5, 5);
-		gbc_cadastrarButton.gridx = 10;
-		gbc_cadastrarButton.gridy = 6;
-		panel.add(cadastrarButton, gbc_cadastrarButton);
+		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_1.setBackground(Color.WHITE);
+		getContentPane().add(panel_1, BorderLayout.NORTH);
+		
+		JLabel lblId = new JLabel("ID:");
+		lblId.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panel_1.add(lblId);
+		
+		textField = new JTextField();
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		JButton buscarButton = new JButton("Buscar");
+		panel_1.add(buscarButton);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.WHITE);
+		panel_2.setBorder(new LineBorder(Color.DARK_GRAY, 2, true));
+		getContentPane().add(panel_2, BorderLayout.SOUTH);
+		
+				JButton cancelarButton_1 = new JButton("Cancelar");
+				panel_2.add(cancelarButton_1);
+				
+						JButton limparButton_1 = new JButton("Limpar");
+						panel_2.add(limparButton_1);
+						limparButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+						
+						JButton excluirButton = new JButton("Excluir");
+						panel_2.add(excluirButton);
+						excluirButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+						
+						JButton alterarBuuton = new JButton("Alterar");
+						panel_2.add(alterarBuuton);
+						alterarBuuton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
+	public static void main(String[] args) {
+		new TAUsuario(false);
+	}
+	
+	
 	public boolean isProfessor() {
 		return professor;
 	}
@@ -339,6 +364,4 @@ public class TCUsuario extends JFrame {
 		this.cadastrarButton = cadastrarButton;
 	}
 
-	
-	
 }
