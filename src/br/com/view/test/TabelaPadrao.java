@@ -1,4 +1,4 @@
-package br.com.view;
+package br.com.view.test;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -46,7 +46,7 @@ public class TabelaPadrao extends JPanel{
 	/*
 	 * =========================================  GET and SET  ===================================================
 	 */
-	public void setColumn(Object[] coolumn) {
+	public void setColumns(Object[] coolumn) {
 		for (int i = 0; i < coolumn.length; i++) {
 			this.model.addColumn(coolumn[i]);
 		}
