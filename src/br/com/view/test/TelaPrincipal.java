@@ -83,7 +83,16 @@ public class TelaPrincipal extends JFrame{
 	private JLabel lblMatricula;
 	private JLabel lblTelefone;
 	private JLabel lblSituao_1;
-	private JLabel label;
+	private JLabel lblCdigo;
+	private JLabel lblDepartamento;
+	private JLabel nomeLabelS;
+	private JLabel emailLabelS;
+	private JLabel cpfLabelS;
+	private JLabel matriculaLabelS;
+	private JLabel telefoneLabelS;
+	private JLabel situacaoLabelS;
+	private JLabel codigoLabelStatus;
+	private JLabel departamentoLabelS;
 	
 	
 	
@@ -180,8 +189,12 @@ public class TelaPrincipal extends JFrame{
 		paineldeUsuario.add(painelStatus, BorderLayout.CENTER);
 		painelStatus.setLayout(new FormLayout(new ColumnSpec[] {
 				FormSpecs.RELATED_GAP_COLSPEC,
+				FormSpecs.DEFAULT_COLSPEC,
+				FormSpecs.RELATED_GAP_COLSPEC,
 				FormSpecs.DEFAULT_COLSPEC,},
 			new RowSpec[] {
+				FormSpecs.RELATED_GAP_ROWSPEC,
+				FormSpecs.DEFAULT_ROWSPEC,
 				FormSpecs.RELATED_GAP_ROWSPEC,
 				FormSpecs.DEFAULT_ROWSPEC,
 				FormSpecs.RELATED_GAP_ROWSPEC,
@@ -200,23 +213,50 @@ public class TelaPrincipal extends JFrame{
 		lblNome = new JLabel("Nome:");
 		painelStatus.add(lblNome, "2, 2");
 		
+		nomeLabelS = new JLabel("New label");
+		painelStatus.add(nomeLabelS, "4, 2");
+		
 		lblEmail = new JLabel("Email:");
 		painelStatus.add(lblEmail, "2, 4");
+		
+		emailLabelS = new JLabel("New label");
+		painelStatus.add(emailLabelS, "4, 4");
 		
 		lblCpf = new JLabel("CPF:");
 		painelStatus.add(lblCpf, "2, 6");
 		
+		cpfLabelS = new JLabel("New label");
+		painelStatus.add(cpfLabelS, "4, 6");
+		
 		lblMatricula = new JLabel("Matricula:");
 		painelStatus.add(lblMatricula, "2, 8");
+		
+		matriculaLabelS = new JLabel("New label");
+		painelStatus.add(matriculaLabelS, "4, 8");
 		
 		lblTelefone = new JLabel("Telefone:");
 		painelStatus.add(lblTelefone, "2, 10");
 		
+		telefoneLabelS = new JLabel("New label");
+		painelStatus.add(telefoneLabelS, "4, 10");
+		
 		lblSituao_1 = new JLabel("Situação:");
 		painelStatus.add(lblSituao_1, "2, 12");
 		
-		label = new JLabel("New label");
-		painelStatus.add(label, "2, 14");
+		situacaoLabelS = new JLabel("New label");
+		painelStatus.add(situacaoLabelS, "4, 12");
+		
+		lblCdigo = new JLabel("Código:");
+		painelStatus.add(lblCdigo, "2, 14");
+		
+		codigoLabelStatus = new JLabel("New label");
+		painelStatus.add(codigoLabelStatus, "4, 14");
+		
+		lblDepartamento = new JLabel("Departamento:");
+		painelStatus.add(lblDepartamento, "2, 16");
+		
+		departamentoLabelS = new JLabel("New label");
+		painelStatus.add(departamentoLabelS, "4, 16");
 		
 
 		lblPesquisar = new JLabel("Pesquisar:");
