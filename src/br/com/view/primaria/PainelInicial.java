@@ -1,4 +1,4 @@
-package br.com.view.test;
+package br.com.view.primaria;
 
 import java.awt.BorderLayout;
 
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class PainelUsuario extends JPanel{
+public class PainelInicial extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -47,7 +47,7 @@ public class PainelUsuario extends JPanel{
 	private JLabel lblPesquisar;
 	private JTextField pesquisaField;
 
-	public PainelUsuario() {
+	public PainelInicial() {
 		
 		/*
 		 * Paineis
@@ -79,6 +79,8 @@ public class PainelUsuario extends JPanel{
 		solicitarEmprestismoButton = new JButton("Solicitar Emprestismo");
 		painelDosBotoesiniciais.add(solicitarEmprestismoButton);
 		
+		pesquisarButton = new JButton("Pesquisar");
+		
 		/*
 		 * Outros
 		 */
@@ -90,12 +92,13 @@ public class PainelUsuario extends JPanel{
 		paineldeLogin.add(pesquisaField);
 		pesquisaField.setColumns(15);
 		
-		pesquisarButton = new JButton("Pesquisar");
+		
 		
 		/*
 		 *RaioButtons 
 		 */
 		palavraChaveRB = new JRadioButton("Palavra-Chave");
+		palavraChaveRB.setSelected(true);
 		paineldeLogin.add(palavraChaveRB);
 		
 		tituloRB = new JRadioButton("Titulo");

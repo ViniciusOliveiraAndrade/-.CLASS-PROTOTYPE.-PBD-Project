@@ -3,9 +3,9 @@ package br.com.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.com.view.TCadastrarEmprestimo;
-import br.com.view.TDevolverEmprestimo;
-import br.com.view.TFuncionario;
+import br.com.view.Antiga.TCadastrarEmprestimo;
+import br.com.view.Antiga.TDevolverEmprestimo;
+import br.com.view.Antiga.TFuncionario;
 
 public class CTFuncinario implements ActionListener {
 	private TFuncionario tela;

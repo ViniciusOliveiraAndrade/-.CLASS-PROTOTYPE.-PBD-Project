@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import br.com.view.TMeusEmprestimos;
-import br.com.view.TUsuario;
+import br.com.view.Antiga.TMeusEmprestimos;
+import br.com.view.Antiga.TUsuario;
 
 public class CTUsuario implements ActionListener{
 	
@@ -20,7 +20,7 @@ public class CTUsuario implements ActionListener{
 			new TMeusEmprestimos(this.tela.getUsuarioLogado());
 		}
 		if(e.getSource() == this.tela.getMinhaSituacaoB()) {
-			JOptionPane.showMessageDialog(this.tela, "Minha situação é : " +this.tela.getUsuarioLogado().getSituacao());
+			JOptionPane.showMessageDialog(this.tela, "Minha situaï¿½ï¿½o ï¿½ : " +this.tela.getUsuarioLogado().getSituacao());
 		}
 	}
 	

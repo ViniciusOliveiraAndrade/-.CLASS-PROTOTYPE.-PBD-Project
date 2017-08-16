@@ -1,4 +1,4 @@
-package br.com.view.test;
+package br.com.view.primaria;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,24 +22,28 @@ public class TabelaPadrao extends JPanel{
 	private DefaultTableModel model;
 	
 	public TabelaPadrao(String titulo) {
-		setSize(500,500);
+		this.setBackground(Color.WHITE);
+		this.setSize(500,500);
 		
-		setBorder(new TitledBorder(new LineBorder(new Color(128, 128, 128), 2, true), titulo, TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		setBackground(Color.WHITE);
-		setLayout(new BorderLayout(0,0));
+		this.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), titulo, TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		this.setBackground(Color.WHITE);
+		this.setLayout(new BorderLayout(0,0));
 		
-		model = new DefaultTableModel();
+		this.model = new DefaultTableModel();
 		
-		table = new JTable(model);
-		table.setFont(new Font("Arial", Font.BOLD, 14));
-		table.setCellEditor(null);
-		table.setBackground(Color.WHITE);
 		
-		scrollPane = new JScrollPane(table);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBackground(Color.WHITE);
-		add(scrollPane, BorderLayout.CENTER);
+		this.table = new JTable(model);
+		table.setForeground(Color.DARK_GRAY);
+		this.table.setFont(new Font("Arial", Font.BOLD, 14));
+		this.table.setCellEditor(null);
+		this.table.setBackground(Color.WHITE);
+		
+		
+		this.scrollPane = new JScrollPane(table);
+		this.scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		this.scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		this.scrollPane.setBackground(Color.WHITE);
+		this.add(this.scrollPane, BorderLayout.CENTER);
 		
 		
 	}

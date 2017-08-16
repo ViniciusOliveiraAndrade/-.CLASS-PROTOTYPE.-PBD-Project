@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 import br.com.model.controller.EmprestimoController;
 import br.com.model.dao.EmprestimoDAO;
-import br.com.view.TDevolverEmprestimo;
+import br.com.view.Antiga.TDevolverEmprestimo;
 
 public class CTDevolverEmprestimo implements ActionListener{
 	
@@ -19,6 +19,6 @@ public class CTDevolverEmprestimo implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-		JOptionPane.showMessageDialog(this.tela, "Sua multa é de R$"+this.ec.devolverEmprestimo(EmprestimoDAO.getById(Integer.parseInt(this.tela.getIdEmprestimoF().getText())), this.tela.getFuncionarioLogado())+"0");
+		JOptionPane.showMessageDialog(this.tela, "Sua multa ï¿½ de R$"+this.ec.devolverEmprestimo(EmprestimoDAO.getById(Integer.parseInt(this.tela.getIdEmprestimoF().getText())), this.tela.getFuncionarioLogado())+"0");
 	}
 }

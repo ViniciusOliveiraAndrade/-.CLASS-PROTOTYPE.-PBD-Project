@@ -1,4 +1,4 @@
-package br.com.view;
+package br.com.view.Antiga;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

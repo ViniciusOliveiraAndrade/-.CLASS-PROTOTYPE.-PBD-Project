@@ -1,4 +1,4 @@
-package br.com.view;
+package br.com.view.Antiga;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -114,9 +114,9 @@ public class TAcervoBiblioteca extends JFrame{
 		model = new DefaultTableModel();
 		model.addColumn("Id");
 		model.addColumn("Codigo");
-		model.addColumn("Numero da edição");
+		model.addColumn("Numero da ediï¿½ï¿½o");
 		model.addColumn("Titulo");
-		model.addColumn("Ano da publicação");
+		model.addColumn("Ano da publicaï¿½ï¿½o");
 		model.addColumn("Numero de exemplares");
 		model.addColumn("Editora");
 		model.addColumn("Autor");

@@ -1,4 +1,4 @@
-package br.com.view;
+package br.com.view.Antiga;
 
 import javax.swing.JFrame;
 
@@ -46,13 +46,13 @@ public class TMeusEmprestimos extends JFrame {
 		model = new DefaultTableModel();
 		model.addColumn("ID");
 		model.addColumn("Titulo do Livro");
-		model.addColumn("Situação");
+		model.addColumn("Situaï¿½ï¿½o");
 		model.addColumn("Data do Emprestimo");
 		model.addColumn("Data presvista Entrega");
 		model.addColumn("Data da Entrega");
 		model.addColumn("Multa");
 		model.addColumn("Funcionario Emprestimo");
-		model.addColumn("Funcionario Devolução");
+		model.addColumn("Funcionario Devoluï¿½ï¿½o");
 		
 		table = new JTable(model);
 		table.setFont(new Font("Arial", Font.BOLD, 14));

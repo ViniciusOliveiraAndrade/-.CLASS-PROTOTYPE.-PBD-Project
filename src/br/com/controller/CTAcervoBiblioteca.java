@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import br.com.model.beans.Livro;
 import br.com.model.controller.LivroController;
-import br.com.view.TAcervoBiblioteca;
+import br.com.view.Antiga.TAcervoBiblioteca;
 
 public class CTAcervoBiblioteca implements ActionListener {
 	

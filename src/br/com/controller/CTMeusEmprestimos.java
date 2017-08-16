@@ -6,7 +6,7 @@ import java.util.List;
 
 import br.com.model.beans.Emprestimo;
 import br.com.model.dao.EmprestimoDAO;
-import br.com.view.TMeusEmprestimos;
+import br.com.view.Antiga.TMeusEmprestimos;
 
 public class CTMeusEmprestimos implements ActionListener {
 

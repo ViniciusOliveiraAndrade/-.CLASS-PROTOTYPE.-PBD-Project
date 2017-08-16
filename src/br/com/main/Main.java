@@ -1,23 +1,7 @@
 package br.com.main;
 
 
-//import java.util.Date;
-//import java.util.List;
-//
-//import br.com.model.Autor;
-//import br.com.model.Emprestimo;
-//import br.com.model.EmprestimoController;
-//import br.com.model.Funcionario;
-//import br.com.model.Livro;
-//import br.com.model.Usuario;
-//import br.com.model.dao.AutorDAO;
-//import br.com.model.dao.Connection;
-//import br.com.model.dao.EmprestimoDAO;
-//import br.com.model.dao.FuncionarioDAO;
-//import br.com.model.dao.LivroDAO;
-//import br.com.model.dao.UsuarioDAO;
-//import br.com.view.TCadastrarEmprestimo;
-import br.com.view.TInicio;
+import br.com.view.Antiga.TInicio;
 
 public class Main {
 

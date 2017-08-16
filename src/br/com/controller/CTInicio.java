@@ -3,9 +3,9 @@ package br.com.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import br.com.view.TAcervoBiblioteca;
-import br.com.view.TInicio;
-import br.com.view.TLogin;
+import br.com.view.Antiga.TAcervoBiblioteca;
+import br.com.view.Antiga.TInicio;
+import br.com.view.Antiga.TLogin;
 
 public class CTInicio implements ActionListener{
 	

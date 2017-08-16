@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import br.com.model.controller.LoginController;
-import br.com.view.TFuncionario;
-import br.com.view.TLogin;
-import br.com.view.TUsuario;
+import br.com.view.Antiga.TFuncionario;
+import br.com.view.Antiga.TLogin;
+import br.com.view.Antiga.TUsuario;
 
 public class CTLogin implements ActionListener{
 
@@ -32,7 +32,7 @@ public class CTLogin implements ActionListener{
 					new TFuncionario(this.lc.getFuncionarioLogado());
 					this.tela.dispose();
 				}
-			}else {JOptionPane.showMessageDialog(this.tela,	 "Matricula ou CPF não encontrados");}
+			}else {JOptionPane.showMessageDialog(this.tela,	 "Matricula ou CPF nï¿½o encontrados");}
 		}
 
 	}
