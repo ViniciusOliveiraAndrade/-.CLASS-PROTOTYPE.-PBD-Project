@@ -31,7 +31,7 @@ public class LivroDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	@SuppressWarnings("static-access")
@@ -44,7 +44,7 @@ public class LivroDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	

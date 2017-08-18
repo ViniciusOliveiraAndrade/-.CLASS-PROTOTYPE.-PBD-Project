@@ -24,15 +24,15 @@ public class CTLogin implements ActionListener{
 		if(e.getSource() == this.tela.getAncelarB()){this.tela.dispose();}
 
 		if(e.getSource() == this.tela.getLogarB()){
-			if(this.lc.podeLogar(Integer.parseInt(this.tela.getMatriculaTF().getText()), this.tela.getCpfTF().getText())) {
-				if(this.lc.eUsuario()) {
-					new TUsuario(this.lc.getUsuarioLogado());
-					this.tela.dispose();
-				}else {
-					new TFuncionario(this.lc.getFuncionarioLogado());
-					this.tela.dispose();
-				}
-			}else {JOptionPane.showMessageDialog(this.tela,	 "Matricula ou CPF n�o encontrados");}
+//			if(this.lc.podeLogar(Integer.parseInt(this.tela.getMatriculaTF().getText()), this.tela.getCpfTF().getText())) {
+//				if(this.lc.eUsuario()) {
+//					new TUsuario(this.lc.getUsuarioLogado());
+//					this.tela.dispose();
+//				}else {
+//					new TFuncionario(this.lc.getFuncionarioLogado());
+//					this.tela.dispose();
+//				}
+//			}else {JOptionPane.showMessageDialog(this.tela,	 "Matricula ou CPF n�o encontrados");}
 		}
 
 	}

@@ -33,7 +33,7 @@ public class EmprestimoDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	@SuppressWarnings("static-access")
@@ -46,7 +46,7 @@ public class EmprestimoDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	
@@ -64,7 +64,7 @@ public class EmprestimoDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 		
 		return emprestimos;
@@ -83,7 +83,7 @@ public class EmprestimoDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-			Connection.getInstance().getEntityManager().close();
+//			Connection.getInstance().getEntityManager().close();
 		}
 		
 		return qt;

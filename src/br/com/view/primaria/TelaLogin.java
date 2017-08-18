@@ -7,6 +7,10 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 public class TelaLogin extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField cpfField;
 	private JButton logarButton;
 	public TelaLogin() {

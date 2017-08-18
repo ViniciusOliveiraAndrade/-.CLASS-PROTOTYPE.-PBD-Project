@@ -2,47 +2,40 @@ package br.com.view.primaria;
 
 import javax.swing.JFrame;
 
+import br.com.controller.primaria.ControllerTelaPrincipal;
 import br.com.model.beans.Funcionario;
 import br.com.model.beans.Usuario;
+import br.com.view.funcionario.PainelFuncionario;
 import br.com.view.usuario.PainelUsuario;
 
-import java.awt.CardLayout;
-import java.util.Observable;
-import java.util.Observer;
 
-public class TelaPrincipal extends JFrame implements Observer{
+public class TelaPrincipal extends JFrame{
 	
 	
 	private static final long serialVersionUID = 1L;
-	private static Funcionario funcionarioLogado = null;
-	private static Usuario usuarioLogado = null;
 	
+	private ControllerTelaPrincipal controller;
 	/*
 	 * Paineis
 	 */
 	private PainelInicial painelInicial;
 	private PainelUsuario painelUsuario;
-
+	private PainelFuncionario painelFuncionario;
 	
 	public TelaPrincipal() {
 		super("Biblioteca");
 		setSize(820,600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		getContentPane().setLayout(new CardLayout(0, 0));
-		
+//		getContentPane().setLayout(new CardLayout(0, 0));
+		this.controller = new ControllerTelaPrincipal(this);
 		
 		/*
 		 * Paineis
 		 */
-		this.painelInicial = new PainelInicial();
+		
+		this.painelInicial = new PainelInicial(controller);
 		this.getContentPane().add(this.painelInicial);
-		
-//		this.painelUsuario = new PainelUsuario(new Usuario(2, "10602066417", 2, "vinicius@Gmail.com", "normal", "Vinicius", "99999999"));
-//		this.getContentPane().add(this.painelUsuario);
-		
-		
-		
 		
 		setVisible(true);
 	}
@@ -51,18 +44,30 @@ public class TelaPrincipal extends JFrame implements Observer{
 		new TelaPrincipal();
 	}
 	
-	public static void logarUsuario(Usuario u) {
+	public void logarUsuario(Usuario u) {
+		this.painelInicial.setVisible(false);
+		this.painelUsuario = new PainelUsuario(u);
+		this.getContentPane().add(this.painelUsuario);
+	}
+	
+	public void logarFuncionario(Funcionario f) {
+		this.painelInicial.setVisible(false);
+		this.painelFuncionario = new PainelFuncionario(f);
+		this.getContentPane().add(this.painelFuncionario);
 		
 	}
 	
-	public static void logarFuncionario() {}
-
-	@Override
-	public void update(Observable o, Object arg) {
+	public void desLogar(){
+		try {
+			this.painelUsuario.setVisible(false);
+		} catch (Exception e) {
+			this.painelFuncionario.setVisible(false);
+		}finally{
+			this.painelInicial = new PainelInicial(controller);
+			this.getContentPane().add(this.painelInicial);
+		}
 		
 		
 	}
-
-	
 
 }

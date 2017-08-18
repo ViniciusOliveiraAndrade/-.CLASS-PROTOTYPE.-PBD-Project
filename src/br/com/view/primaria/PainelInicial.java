@@ -10,6 +10,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import br.com.controller.primaria.ControllerPainelInicial;
+import br.com.controller.primaria.ControllerTelaPrincipal;
 
 public class PainelInicial extends JPanel{
 
@@ -52,7 +53,7 @@ public class PainelInicial extends JPanel{
 	
 	private ControllerPainelInicial controller;
 
-	public PainelInicial() {
+	public PainelInicial(ControllerTelaPrincipal c) {
 		
 		/*
 		 * Paineis
@@ -61,7 +62,7 @@ public class PainelInicial extends JPanel{
 		
 		setLayout(new BorderLayout(0, 0));
 		
-		this.controller = new ControllerPainelInicial(this);
+		this.controller = new ControllerPainelInicial(this,c);
 		
 		this.paineldeLogin = new JPanel();
 		add(this.paineldeLogin, BorderLayout.NORTH);
