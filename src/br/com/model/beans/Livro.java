@@ -1,9 +1,10 @@
-//Livro  (*id, *coidgo, titulo, numero_edição, ano_de_publicação, editora, numero_de_exemplares, #id_autor)
+//Livro  (*id, *coidgo, titulo, numero_ediï¿½ï¿½o, ano_de_publicaï¿½ï¿½o, editora, numero_de_exemplares, #id_autor)
 
 package br.com.model.beans;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,7 @@ public class Livro {
 	
 	private String titulo;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "autor_id")
 	private Autor autor;
 	

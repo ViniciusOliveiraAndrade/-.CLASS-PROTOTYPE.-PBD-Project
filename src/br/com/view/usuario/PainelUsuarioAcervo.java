@@ -87,9 +87,9 @@ public class PainelUsuarioAcervo extends JPanel{
 	
 
 	public void ordemAdicaoPainelPesquisa() {
-		this.add(this.lblPesquisar);
+		this.painelPesquisa.add(this.lblPesquisar);
 		
-		this.add(this.pesquisaField);
+		this.painelPesquisa.add(this.pesquisaField);
 		
 		this.painelPesquisa.add(this.palavraChaveRB);
 		this.painelPesquisa.add(this.tituloRB);

@@ -14,16 +14,16 @@ public class LoginController {
 	private List<Usuario> user = UsuarioDAO.findAll();
 	private List<Funcionario> funs = FuncionarioDAO.findAll();
 	
-	public boolean podeLogar(int matricula, String cpf) {
+	public boolean podeLogar(String cpf) {
 		
 		for(int i = 0;i<user.size();i++) {
-			if(user.get(i).getMatricula() == matricula && user.get(i).getCpf().equals(cpf)) {
+			if(user.get(i).getCpf().equals(cpf)) {
 				usuarioLogado = user.get(i);
 				return true;
 			}
 		}
 		for(int i = 0;i<funs.size();i++) {
-			if(funs.get(i).getMatricula() == matricula && funs.get(i).getCpf().equals(cpf)) {
+			if(funs.get(i).getCpf().equals(cpf)) {
 				funcionarioLogado = funs.get(i);
 				return true;
 			}

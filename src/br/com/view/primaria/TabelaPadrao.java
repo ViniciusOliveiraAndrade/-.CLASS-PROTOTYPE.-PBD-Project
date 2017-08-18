@@ -32,14 +32,14 @@ public class TabelaPadrao extends JPanel{
 		this.model = new DefaultTableModel();
 		
 		
-		this.table = new JTable(model);
-		table.setForeground(Color.DARK_GRAY);
+		this.table = new JTable(this.model);
+		this.table.setForeground(Color.DARK_GRAY);
 		this.table.setFont(new Font("Arial", Font.BOLD, 14));
 		this.table.setCellEditor(null);
 		this.table.setBackground(Color.WHITE);
 		
 		
-		this.scrollPane = new JScrollPane(table);
+		this.scrollPane = new JScrollPane(this.table);
 		this.scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		this.scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		this.scrollPane.setBackground(Color.WHITE);
@@ -60,6 +60,9 @@ public class TabelaPadrao extends JPanel{
 	}
 	public DefaultTableModel getModel() {
 		return model;
+	}
+	public void zerarTabela() {
+		this.model.setNumRows(0);
 	}
 	
 	

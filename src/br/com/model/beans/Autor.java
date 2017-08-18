@@ -19,6 +19,13 @@ public class Autor {
 	
 	
 	public Autor(){}
+	
+	
+	public Autor(String nome) {
+		super();
+		this.nome = nome;
+	}
+
 
 	/*
 	 * =========================================  GET and SET  ===================================================

@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import br.com.controller.primaria.ControllerPainelInicial;
+
 public class PainelInicial extends JPanel{
 
 	private static final long serialVersionUID = 1L;
@@ -45,7 +47,10 @@ public class PainelInicial extends JPanel{
 	 */
 	
 	private JLabel lblPesquisar;
+	
 	private JTextField pesquisaField;
+	
+	private ControllerPainelInicial controller;
 
 	public PainelInicial() {
 		
@@ -56,68 +61,75 @@ public class PainelInicial extends JPanel{
 		
 		setLayout(new BorderLayout(0, 0));
 		
-		paineldeLogin = new JPanel();
-		add(paineldeLogin, BorderLayout.NORTH);
+		this.controller = new ControllerPainelInicial(this);
 		
-		tabelaAcervo = new TabelaPadrao("Acervo");
-		tabelaAcervo.setColumns(new Object[] {"Id","Codigo","Titulo","Numero da edicao","Ano da publicacao","Numero de exemplares","Editora","Autor"});
-		add(tabelaAcervo, BorderLayout.CENTER);
+		this.paineldeLogin = new JPanel();
+		add(this.paineldeLogin, BorderLayout.NORTH);
 		
-		painelDosBotoesiniciais = new JPanel();
-		add(painelDosBotoesiniciais, BorderLayout.SOUTH);
+		this.tabelaAcervo = new TabelaPadrao("Acervo");
+		this.tabelaAcervo.setColumns(new Object[] {"Id","Codigo","Titulo","Numero da edicao","Ano da publicacao","Numero de exemplares","Editora","Autor"});
+		add(this.tabelaAcervo, BorderLayout.CENTER);
+		
+		this.painelDosBotoesiniciais = new JPanel();
+		add(this.painelDosBotoesiniciais, BorderLayout.SOUTH);
 		
 		/*
 		 * Butôes
 		 */
 		
-		logarButton = new JButton("Logar");
-		paineldeLogin.add(logarButton);
+		this.logarButton = new JButton("Logar");
+		this.logarButton.addActionListener(this.controller);
+		this.paineldeLogin.add(this.logarButton);
 		
-		solicitarReservaButton = new JButton("Solicitar Reserva");
-		painelDosBotoesiniciais.add(solicitarReservaButton);
+		this.solicitarReservaButton = new JButton("Solicitar Reserva");
+		this.solicitarReservaButton.addActionListener(this.controller);
+		this.painelDosBotoesiniciais.add(this.solicitarReservaButton);
 		
-		solicitarEmprestismoButton = new JButton("Solicitar Emprestismo");
-		painelDosBotoesiniciais.add(solicitarEmprestismoButton);
+		this.solicitarEmprestismoButton = new JButton("Solicitar Emprestismo");
+		this.solicitarEmprestismoButton.addActionListener(this.controller);
+		this.painelDosBotoesiniciais.add(this.solicitarEmprestismoButton);
 		
-		pesquisarButton = new JButton("Pesquisar");
+		
+		
 		
 		/*
 		 * Outros
 		 */
 		
-		lblPesquisar = new JLabel("Pesquisar:");
-		paineldeLogin.add(lblPesquisar);
+		this.lblPesquisar = new JLabel("Pesquisar:");
+		this.paineldeLogin.add(lblPesquisar);
 		
-		pesquisaField = new JTextField();
-		paineldeLogin.add(pesquisaField);
-		pesquisaField.setColumns(15);
+		this.pesquisaField = new JTextField();
+		this.paineldeLogin.add(this.pesquisaField);
+		this.pesquisaField.setColumns(15);
 		
 		
 		
 		/*
 		 *RaioButtons 
 		 */
-		palavraChaveRB = new JRadioButton("Palavra-Chave");
-		palavraChaveRB.setSelected(true);
-		paineldeLogin.add(palavraChaveRB);
+		this.palavraChaveRB = new JRadioButton("Palavra-Chave");
+		this.palavraChaveRB.setSelected(true);
+		this.paineldeLogin.add(this.palavraChaveRB);
 		
-		tituloRB = new JRadioButton("Titulo");
-		paineldeLogin.add(tituloRB);
+		this.tituloRB = new JRadioButton("Titulo");
+		this.paineldeLogin.add(this.tituloRB);
 		
-		editoraRB = new JRadioButton("Editora");
-		paineldeLogin.add(editoraRB);
+		this.editoraRB = new JRadioButton("Editora");
+		this.paineldeLogin.add(this.editoraRB);
 		
-		autorRB = new JRadioButton("Autor");
-		paineldeLogin.add(autorRB);
+		this.autorRB = new JRadioButton("Autor");
+		this.paineldeLogin.add(this.autorRB);
 		
-		grupo = new ButtonGroup();
-		grupo.add(autorRB);
-		grupo.add(palavraChaveRB);
-		grupo.add(tituloRB);
-		grupo.add(editoraRB);
+		this.grupo = new ButtonGroup();
+		this.grupo.add(this.autorRB);
+		this.grupo.add(this.palavraChaveRB);
+		this.grupo.add(this.tituloRB);
+		this.grupo.add(this.editoraRB);
 		
-		pesquisarButton = new JButton("Pesquisar");
-		paineldeLogin.add(pesquisarButton);
+		this.pesquisarButton = new JButton("Pesquisar");
+		this.pesquisarButton.addActionListener(this.controller);
+		this.paineldeLogin.add(this.pesquisarButton);
 		
 	}
 
@@ -167,10 +179,6 @@ public class PainelInicial extends JPanel{
 
 	public ButtonGroup getGrupo() {
 		return grupo;
-	}
-
-	public JLabel getLblPesquisar() {
-		return lblPesquisar;
 	}
 
 	public JTextField getPesquisaField() {
