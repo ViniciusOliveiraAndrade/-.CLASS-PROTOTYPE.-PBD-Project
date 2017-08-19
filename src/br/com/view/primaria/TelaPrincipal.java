@@ -46,7 +46,7 @@ public class TelaPrincipal extends JFrame{
 	
 	public void logarUsuario(Usuario u) {
 		this.painelInicial.setVisible(false);
-		this.painelUsuario = new PainelUsuario(u);
+		this.painelUsuario = new PainelUsuario(u,this.controller);
 		this.getContentPane().add(this.painelUsuario);
 	}
 	
@@ -62,10 +62,12 @@ public class TelaPrincipal extends JFrame{
 			this.painelUsuario.setVisible(false);
 		} catch (Exception e) {
 			this.painelFuncionario.setVisible(false);
-		}finally{
+			System.out.println("Deu errado");
+		}
+		
 			this.painelInicial = new PainelInicial(controller);
 			this.getContentPane().add(this.painelInicial);
-		}
+		
 		
 		
 	}

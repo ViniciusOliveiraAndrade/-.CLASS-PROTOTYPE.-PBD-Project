@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import br.com.controller.primaria.ControllerPainelInicial;
 import br.com.controller.primaria.ControllerTelaPrincipal;
+import java.awt.Color;
 
 public class PainelInicial extends JPanel{
 
@@ -54,6 +55,7 @@ public class PainelInicial extends JPanel{
 	private ControllerPainelInicial controller;
 
 	public PainelInicial(ControllerTelaPrincipal c) {
+		setBackground(Color.WHITE);
 		
 		/*
 		 * Paineis
@@ -65,13 +67,16 @@ public class PainelInicial extends JPanel{
 		this.controller = new ControllerPainelInicial(this,c);
 		
 		this.paineldeLogin = new JPanel();
+		paineldeLogin.setBackground(Color.WHITE);
 		add(this.paineldeLogin, BorderLayout.NORTH);
 		
 		this.tabelaAcervo = new TabelaPadrao("Acervo");
+		tabelaAcervo.setBackground(new Color(255, 255, 255));
 		this.tabelaAcervo.setColumns(new Object[] {"Id","Codigo","Titulo","Numero da edicao","Ano da publicacao","Numero de exemplares","Editora","Autor"});
 		add(this.tabelaAcervo, BorderLayout.CENTER);
 		
 		this.painelDosBotoesiniciais = new JPanel();
+		painelDosBotoesiniciais.setBackground(Color.WHITE);
 		add(this.painelDosBotoesiniciais, BorderLayout.SOUTH);
 		
 		/*
@@ -110,16 +115,20 @@ public class PainelInicial extends JPanel{
 		 *RaioButtons 
 		 */
 		this.palavraChaveRB = new JRadioButton("Palavra-Chave");
+		palavraChaveRB.setBackground(Color.WHITE);
 		this.palavraChaveRB.setSelected(true);
 		this.paineldeLogin.add(this.palavraChaveRB);
 		
 		this.tituloRB = new JRadioButton("Titulo");
+		tituloRB.setBackground(Color.WHITE);
 		this.paineldeLogin.add(this.tituloRB);
 		
 		this.editoraRB = new JRadioButton("Editora");
+		editoraRB.setBackground(Color.WHITE);
 		this.paineldeLogin.add(this.editoraRB);
 		
 		this.autorRB = new JRadioButton("Autor");
+		autorRB.setBackground(Color.WHITE);
 		this.paineldeLogin.add(this.autorRB);
 		
 		this.grupo = new ButtonGroup();

@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
+import br.com.controller.usuario.ControllerPainelUsuarioAcervo;
 import br.com.view.primaria.TabelaPadrao;
 
 public class PainelUsuarioAcervo extends JPanel{
@@ -37,10 +38,14 @@ public class PainelUsuarioAcervo extends JPanel{
 	
 	private JTextField pesquisaField;
 	
+	private ControllerPainelUsuarioAcervo controller;
+	
 	public PainelUsuarioAcervo() {
 		
 		this.tabelaAcervo = new TabelaPadrao("Acervo");
 		this.tabelaAcervo.setColumns(new Object[] {"Id","Codigo","Titulo","Numero da edicao","Ano da publicacao","Numero de exemplares","Editora","Autor"});
+		
+		this.controller = new ControllerPainelUsuarioAcervo(this);
 		
 		this.painelOpcoes = new JPanel();
 		this.painelOpcoes.setBorder(new TitledBorder(new LineBorder(Color.DARK_GRAY, 2, true), "Solicitar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -52,9 +57,14 @@ public class PainelUsuarioAcervo extends JPanel{
 		this.painelPesquisa.setBorder(new LineBorder(Color.DARK_GRAY, 2, true));
 		
 		this.solicitarEmprestimoButton = new JButton("Emprestimo");
+		this.solicitarEmprestimoButton.addActionListener(controller);
+		
 		this.solicitarReservaButton = new JButton("Reserva");
+		this.solicitarReservaButton.addActionListener(controller);
+		
 		this.pesquisarButton = new JButton("Pesquisar");
-	
+		this.pesquisarButton.addActionListener(controller);
+		
 		this.palavraChaveRB = new JRadioButton("Palavra-Chave");
 		palavraChaveRB.setBackground(Color.WHITE);
 		this.palavraChaveRB.setSelected(true);
@@ -71,7 +81,6 @@ public class PainelUsuarioAcervo extends JPanel{
 		this.grupo.add(this.tituloRB);
 		this.grupo.add(this.editoraRB);
 		
-		this.pesquisarButton = new JButton("Pesquisar");
 		
 		this.lblPesquisar = new JLabel("Pesquisar:");
 		
@@ -132,7 +141,7 @@ public class PainelUsuarioAcervo extends JPanel{
 		return this.painelPesquisa;
 	}
 	
-	public TabelaPadrao getTabelaAvervo() {
+	public TabelaPadrao getTabelaAcervo() {
 		return this.tabelaAcervo;
 	}
 

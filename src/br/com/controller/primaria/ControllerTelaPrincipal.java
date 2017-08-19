@@ -3,6 +3,8 @@ package br.com.controller.primaria;
 import java.util.Observable;
 import java.util.Observer;
 
+import br.com.controller.funcionario.ControllerPainelFuncionario;
+import br.com.controller.usuario.ControllerPainelUsuario;
 import br.com.model.beans.Funcionario;
 import br.com.model.beans.Usuario;
 import br.com.view.primaria.TelaPrincipal;
@@ -33,6 +35,13 @@ public class ControllerTelaPrincipal  implements Observer{
 		}
 		if (arg.getClass() == Funcionario.class){
 			this.telaPrincipal.logarFuncionario((Funcionario) arg);
+		}
+		
+		if ((o.getClass() == ControllerPainelUsuario.class) ||(o.getClass() == ControllerPainelFuncionario.class)) {
+			System.out.println("deveria deslogar");
+			if (!(boolean)arg){
+				this.telaPrincipal.desLogar();
+			}
 		}
 	
 	}
