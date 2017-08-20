@@ -60,9 +60,8 @@ public class PainelAlteraDepartamento extends JPanel{
 
 		
 		excluirButton = new JButton("Excluir");
-		excluirButton.addActionListener(controller);
 		add(excluirButton);
-		
+		excluirButton.addActionListener(controller);
 		
 		this.limparButton = new JButton("Limpar");
 		this.limparButton.setFont(new Font("Tahoma", Font.PLAIN, 13));

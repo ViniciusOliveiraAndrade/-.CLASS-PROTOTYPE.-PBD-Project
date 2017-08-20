@@ -29,7 +29,6 @@ public class DepartamentoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
 		}
 	}
 	public static synchronized void merge(Departamento object) {

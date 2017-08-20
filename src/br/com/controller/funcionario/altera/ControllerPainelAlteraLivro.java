@@ -73,13 +73,12 @@ public class ControllerPainelAlteraLivro implements ActionListener{
 			if(this.livro != null) {
 
 				
-//				Integer.parseInt(this.painel.getCodigoField().getText()) 
-//				Integer.parseInt(this.painel.getEdicaoField().getText()) 
-//				this.painel.getEditoraField().getText()
-//				Integer.parseInt(this.painel.getExemplaresField().getText())
-//				this.painel.getTituloField().getText()
-//				this.painel.getDataPublicacaoField().getText()
-//				
+				this.livro.setCodigo(Integer.parseInt(this.painel.getCodigoField().getText()));
+				this.livro.setNumero_edicao(Integer.parseInt(this.painel.getEdicaoField().getText())); 
+				this.livro.setEditora(this.painel.getEditoraField().getText());
+				this.livro.setNumero_exemplares(Integer.parseInt(this.painel.getExemplaresField().getText()));
+				this.livro.setTitulo(this.painel.getTituloField().getText());
+				this.livro.setAno_publicacao(this.painel.getDataPublicacaoField().getText());
 				
 				LivroDAO.merge(this.livro);
 				JOptionPane.showMessageDialog(this.painel, "Departamento Atualizado com Sucesso");

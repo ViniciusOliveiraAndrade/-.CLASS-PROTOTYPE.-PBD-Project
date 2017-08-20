@@ -31,7 +31,7 @@ public class ControllerPainelAlteraFuncionario implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == this.painel.getBuscarButton()) {
 			try {
-				this.funcionario = FuncionarioDAO.getByNome(this.painel.getBuscarField().getText());
+				this.funcionario = FuncionarioDAO.getByCpf(this.painel.getBuscarField().getText());
 				this.painel.getNomeField().setText(this.funcionario.getNome());
 				this.painel.getMatriculaField().setText(String.valueOf(this.funcionario.getMatricula())); 
 				this.painel.getCpfField().setText(this.funcionario.getCpf()); 

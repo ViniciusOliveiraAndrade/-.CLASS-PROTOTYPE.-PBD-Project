@@ -50,7 +50,7 @@ public class LivroDAO {
 		Livro a = null;
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
-			Query query = Connection.getInstance().getEntityManager().createQuery("select c from Livro c where nome = ?");
+			Query query = Connection.getInstance().getEntityManager().createQuery("select c from Livro c where titulo = ?");
             query.setParameter(0, nome);
             a = (Livro) query.getSingleResult();
 			Connection.getInstance().getEntityManager().getTransaction().commit();

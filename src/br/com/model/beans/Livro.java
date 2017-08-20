@@ -108,6 +108,10 @@ public class Livro {
 		return ano_publicacao;
 	}
 
+	public void setAno_publicacao(String ano_publicacao) {
+		this.ano_publicacao = ano_publicacao;
+	}
+	
 	
 	
 	
