@@ -2,17 +2,12 @@
 
 package br.com.model.beans;
 
-import java.util.Date;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class Livro {
@@ -29,19 +24,18 @@ public class Livro {
 	
 	private String titulo;
 	
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne
 	@JoinColumn(name = "autor_id")
 	private Autor autor;
 	
 	private String editora;
 	
-	@Temporal(TemporalType.DATE)
-	private Date ano_publicacao;
+	private String ano_publicacao;
 	
 	public Livro(){}
 	
 	public Livro(int codigo, int numero_edicao, int numero_exemplares, String titulo, Autor autor, String editora,
-			Date ano_publicacao) {
+			String ano_publicacao) {
 		super();
 		this.codigo = codigo;
 		this.numero_edicao = numero_edicao;
@@ -110,13 +104,11 @@ public class Livro {
 		this.editora = editora;
 	}
 
-	public Date getAno_publicacao() {
+	public String getAno_publicacao() {
 		return ano_publicacao;
 	}
 
-	public void setAno_publicacao(Date ano_publicacao) {
-		this.ano_publicacao = ano_publicacao;
-	}
+	
 	
 	
 }

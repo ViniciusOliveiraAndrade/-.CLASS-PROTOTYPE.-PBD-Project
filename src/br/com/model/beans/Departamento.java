@@ -19,6 +19,12 @@ public class Departamento {
 
 	
 	public Departamento(){}
+	
+	public Departamento(String nome) {
+		this.nome = nome;
+	}
+
+
 
 	/*
 	 * =========================================  GET and SET  ===================================================

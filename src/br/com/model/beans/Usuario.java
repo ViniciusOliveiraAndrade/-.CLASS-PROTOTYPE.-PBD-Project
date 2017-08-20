@@ -24,7 +24,7 @@ public class Usuario {
 	private String cpf;
 
 	@Column(unique = true)
-	private int codigo;
+	private Integer codigo;
 
 	@Column(unique = true)
 	private String email;
@@ -58,6 +58,7 @@ public class Usuario {
 	public Usuario(int matricula, String cpf, String email, String situacao, String nome, String telefone, Departamento departamento) {
 		super();
 		this.matricula = matricula;
+		this.codigo = null;
 		this.cpf = cpf;
 		this.email = email;
 		this.situacao = situacao;

@@ -2,15 +2,22 @@ package br.com.main;
 
 import java.util.Date;
 
+import javax.swing.JFrame;
+
+import org.hibernate.dialect.DataDirectOracle9Dialect;
+
 import br.com.model.beans.Autor;
+import br.com.model.beans.Departamento;
 import br.com.model.beans.Funcionario;
 import br.com.model.beans.Livro;
 import br.com.model.beans.Usuario;
 import br.com.model.controller.EmprestimoController;
+import br.com.model.dao.DepartamentoDAO;
 import br.com.model.dao.EmprestimoDAO;
 import br.com.model.dao.FuncionarioDAO;
 import br.com.model.dao.LivroDAO;
 import br.com.model.dao.UsuarioDAO;
+import br.com.view.funcionario.cadastro.PainelCadastroUsuario;
 import br.com.view.primaria.TelaPrincipal;
 
 public class Testes {
@@ -27,9 +34,14 @@ public class Testes {
 //		ec.criarEmprestimo(LivroDAO.getById(4), UsuarioDAO.getById(3), FuncionarioDAO.getById(1));
 //		ec.devolverEmprestimo(EmprestimoDAO.getById(8),FuncionarioDAO.getById(1) );
 		
-		
-		
-		
+//		JFrame f = new JFrame("");
+//		f.setSize(500, 500);
+//		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		f.setContentPane(new PainelCadastroUsuario());
+//		f.setVisible(true);
+//		Departamento d = new Departamento();
+//		d.setNome("c");
+//		DepartamentoDAO.persist(d);
 		
 		
 //		System.exit(0);

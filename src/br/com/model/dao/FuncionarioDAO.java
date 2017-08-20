@@ -6,9 +6,9 @@ import javax.persistence.Query;
 
 import br.com.model.beans.Funcionario;
 
+@SuppressWarnings("static-access")
 
 public class FuncionarioDAO {
-	@SuppressWarnings("static-access")
 	public static synchronized void persist(Funcionario object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -18,10 +18,8 @@ public class FuncionarioDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized void remove(Funcionario object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -32,10 +30,23 @@ public class FuncionarioDAO {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
 		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
+	public static synchronized Funcionario getByNome(final String nome) {
+		Funcionario a = null;
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select c from Funcionario c where nome = ?");
+            query.setParameter(0, nome);
+            a = (Funcionario) query.getSingleResult();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}
+		return a;
+	}
+	
 	public static synchronized void merge(Funcionario object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -44,12 +55,9 @@ public class FuncionarioDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	
-	@SuppressWarnings("static-access")
 	public static synchronized Funcionario getByCpf(String cpf) {
 		Funcionario u = null;
 		try {
@@ -61,18 +69,14 @@ public class FuncionarioDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
-		
 		return u;
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized Funcionario getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Funcionario.class, id);
 	}
 
-	@SuppressWarnings({ "unchecked", "static-access" })
+	@SuppressWarnings( "unchecked")
 	public static synchronized List<Funcionario> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Funcionario.class.getName()).getResultList();
 	}

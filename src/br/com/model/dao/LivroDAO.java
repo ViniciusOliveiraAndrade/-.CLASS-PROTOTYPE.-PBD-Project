@@ -2,12 +2,14 @@ package br.com.model.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import br.com.model.beans.Livro;
 
 
+@SuppressWarnings("static-access")
 
 public class LivroDAO {
-	@SuppressWarnings("static-access")
 	public static synchronized void persist(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -16,11 +18,8 @@ public class LivroDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized void remove(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -30,11 +29,8 @@ public class LivroDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized void merge(Livro object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -43,17 +39,28 @@ public class LivroDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	
-	@SuppressWarnings("static-access")
 	public static synchronized Livro getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Livro.class, id);
 	}
 
-	@SuppressWarnings({ "unchecked", "static-access" })
+	public static synchronized Livro getByNome(final String nome) {
+		Livro a = null;
+		try {
+			Connection.getInstance().getEntityManager().getTransaction().begin();
+			Query query = Connection.getInstance().getEntityManager().createQuery("select c from Livro c where nome = ?");
+            query.setParameter(0, nome);
+            a = (Livro) query.getSingleResult();
+			Connection.getInstance().getEntityManager().getTransaction().commit();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			Connection.getInstance().getEntityManager().getTransaction().rollback();
+		}
+		return a;
+	}
+	@SuppressWarnings("unchecked")
 	public static synchronized List<Livro> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Livro.class.getName()).getResultList();
 	}

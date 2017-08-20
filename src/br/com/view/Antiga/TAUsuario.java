@@ -28,7 +28,7 @@ public class TAUsuario extends JFrame{
 	private JTextField emailField;
 	private JTextField telefoneField;
 	private JTextField txtRegularizado;
-	
+
 	private JButton cancelarButton;
 	private JButton limparButton;
 	private JButton cadastrarButton;
@@ -36,8 +36,8 @@ public class TAUsuario extends JFrame{
 	private final JLabel label = new JLabel("");
 
 	public TAUsuario(boolean professor) {
-		
-		
+
+
 		getContentPane().setBackground(Color.WHITE);
 		setSize(623,268);
 		this.professor = professor;
@@ -221,42 +221,42 @@ public class TAUsuario extends JFrame{
 		gbc_label.gridx = 17;
 		gbc_label.gridy = 6;
 		panel.add(label, gbc_label);
-		
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Buscar", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_1.setBackground(Color.WHITE);
 		getContentPane().add(panel_1, BorderLayout.NORTH);
-		
+
 		JLabel lblId = new JLabel("ID:");
 		lblId.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		panel_1.add(lblId);
-		
+
 		textField = new JTextField();
 		panel_1.add(textField);
 		textField.setColumns(10);
-		
+
 		JButton buscarButton = new JButton("Buscar");
 		panel_1.add(buscarButton);
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(Color.WHITE);
 		panel_2.setBorder(new LineBorder(Color.DARK_GRAY, 2, true));
 		getContentPane().add(panel_2, BorderLayout.SOUTH);
-		
-				JButton cancelarButton_1 = new JButton("Cancelar");
-				panel_2.add(cancelarButton_1);
-				
-						JButton limparButton_1 = new JButton("Limpar");
-						panel_2.add(limparButton_1);
-						limparButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
-						
-						JButton excluirButton = new JButton("Excluir");
-						panel_2.add(excluirButton);
-						excluirButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-						
-						JButton alterarBuuton = new JButton("Alterar");
-						panel_2.add(alterarBuuton);
-						alterarBuuton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+
+		JButton cancelarButton_1 = new JButton("Cancelar");
+		panel_2.add(cancelarButton_1);
+
+		JButton limparButton_1 = new JButton("Limpar");
+		panel_2.add(limparButton_1);
+		limparButton_1.setFont(new Font("Tahoma", Font.PLAIN, 13));
+
+		JButton excluirButton = new JButton("Excluir");
+		panel_2.add(excluirButton);
+		excluirButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
+
+		JButton alterarBuuton = new JButton("Alterar");
+		panel_2.add(alterarBuuton);
+		alterarBuuton.setFont(new Font("Tahoma", Font.PLAIN, 13));
 
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -266,8 +266,8 @@ public class TAUsuario extends JFrame{
 	public static void main(String[] args) {
 		new TAUsuario(false);
 	}
-	
-	
+
+
 	public boolean isProfessor() {
 		return professor;
 	}

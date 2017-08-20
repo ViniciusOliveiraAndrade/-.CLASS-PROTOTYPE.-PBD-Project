@@ -29,18 +29,28 @@ public class ControllerTelaPrincipal  implements Observer{
 	@SuppressWarnings("static-access")
 	public void update(Observable o, Object arg) {
 		
+		System.out.println("entrou no deslogar");
+		
 		if (arg.getClass() == Usuario.class){
 			this.telaPrincipal.logarUsuario((Usuario) arg);
-			System.out.println("buba");
+			
 		}
+		
 		if (arg.getClass() == Funcionario.class){
 			this.telaPrincipal.logarFuncionario((Funcionario) arg);
 		}
 		
-		if ((o.getClass() == ControllerPainelUsuario.class) ||(o.getClass() == ControllerPainelFuncionario.class)) {
-			System.out.println("deveria deslogar");
+		if (o.getClass() == ControllerPainelUsuario.class) {
+			System.out.println("user");
 			if (!(boolean)arg){
-				this.telaPrincipal.desLogar();
+				this.telaPrincipal.desLogar(true);
+			}
+		}
+		
+		if (o.getClass() == ControllerPainelFuncionario.class) {
+			System.out.println("Func");
+			if (!(boolean)arg){
+				this.telaPrincipal.desLogar(false);
 			}
 		}
 	

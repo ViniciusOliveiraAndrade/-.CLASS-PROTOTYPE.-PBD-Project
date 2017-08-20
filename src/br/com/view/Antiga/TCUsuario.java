@@ -35,7 +35,7 @@ public class TCUsuario extends JFrame {
 	private JButton limparButton;
 	private JButton cadastrarButton;
 	
-	public TCUsuario(boolean professor) {
+	public TCUsuario() {
 		getContentPane().setBackground(Color.WHITE);
 		setSize(584,190);
 		this.professor = professor;

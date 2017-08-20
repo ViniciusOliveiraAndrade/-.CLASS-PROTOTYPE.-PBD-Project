@@ -23,20 +23,23 @@ public class Curso {
 	@Column(unique = true)
 	private String nome;
 	
-	
 
 	public Curso(){}
-	
-	
-	
 
-	public int getId() {
-		return id;
+	public Curso(String nome,Departamento departamento) {
+		super();
+		this.departamento = departamento;
+		this.nome = nome;
 	}
+
 	
 	/*
 	 * =========================================  GET and SET  ===================================================
 	 */
+	
+	public int getId() {
+		return id;
+	}
 
 	public Departamento getDepartamento() {
 		return departamento;

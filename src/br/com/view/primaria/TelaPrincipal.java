@@ -52,17 +52,16 @@ public class TelaPrincipal extends JFrame{
 	
 	public void logarFuncionario(Funcionario f) {
 		this.painelInicial.setVisible(false);
-		this.painelFuncionario = new PainelFuncionario(f);
+		this.painelFuncionario = new PainelFuncionario(f,this.controller);
 		this.getContentPane().add(this.painelFuncionario);
 		
 	}
 	
-	public void desLogar(){
-		try {
+	public void desLogar(boolean user){
+		if(user) {
 			this.painelUsuario.setVisible(false);
-		} catch (Exception e) {
+		} else{
 			this.painelFuncionario.setVisible(false);
-			System.out.println("Deu errado");
 		}
 		
 			this.painelInicial = new PainelInicial(controller);
