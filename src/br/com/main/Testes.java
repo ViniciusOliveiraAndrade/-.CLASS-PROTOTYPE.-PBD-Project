@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import org.hibernate.dialect.DataDirectOracle9Dialect;
 
 import br.com.model.beans.Autor;
+import br.com.model.beans.Caixa;
 import br.com.model.beans.Departamento;
 import br.com.model.beans.Funcionario;
 import br.com.model.beans.Livro;
@@ -36,6 +37,11 @@ public class Testes {
 //		EmprestimoController ec = new EmprestimoController();
 //		ec.criarEmprestimo(LivroDAO.getById(4), UsuarioDAO.getById(3), FuncionarioDAO.getById(1));
 //		ec.devolverEmprestimo(EmprestimoDAO.getById(8),FuncionarioDAO.getById(1) );
+		
+//		Caixa c = new Caixa();
+//		for (int i = 0; i<c.getCaixa().size(); i++) {
+//			System.out.println(c.getCaixa().get(i).getMulta());
+//		}
 		
 //		JFrame f = new JFrame("");
 //		f.setSize(500, 500);

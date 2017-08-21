@@ -34,13 +34,13 @@ public class ControllerPainelFuncionario extends Observable implements ActionLis
 
 		if(e.getSource() == this.painelFuncionario.getAutalizarButton()) {this.painelFuncionario.mostrarAtualizarOpcoes();}
 
-		if(e.getSource() == this.painelFuncionario.getListarButton()) {this.painelFuncionario.esconderPaineisDeOpcoes();}
+		if(e.getSource() == this.painelFuncionario.getListarButton()) {this.painelFuncionario.mostrarListarOpcoes();}
 
 		if(e.getSource() == this.painelFuncionario.getAprovarButton()) {this.painelFuncionario.mostrarAprovarOpcoes();}
 
 		if(e.getSource() == this.painelFuncionario.getRealizarButton()) {this.painelFuncionario.mostrarRelizarOpcoes();}
 
-		if(e.getSource() == this.painelFuncionario.getCaixaButton()) {}
+		if(e.getSource() == this.painelFuncionario.getCaixaButton()) {this.painelFuncionario.criarPainelCaixa();}
 
 		if(e.getSource() == this.painelFuncionario.getDeslogarButton()) {this.deslogar();}
 
@@ -97,9 +97,35 @@ public class ControllerPainelFuncionario extends Observable implements ActionLis
 		if(e.getSource() == this.painelFuncionario.getaODepartamentoButton()) {
 			this.painelFuncionario.criarPainelAlteraDepartamento();
 		}
+
 		//Listar
 
+		if(e.getSource() == this.painelFuncionario.getlOUsuarioButton()) {
+			this.painelFuncionario.criarPainelListarUsuario();
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlOFuncionarioButton()) {
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlOAutorButton()) {
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlOLivroButton()) {
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlOCursoButton()) {
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlODepartamentoButton()) {
+		}
+		if(e.getSource() == this.painelFuncionario.getlOEmprestimoButton()) {
+		}
+
+		if(e.getSource() == this.painelFuncionario.getlOReservaButton()) {
+		}
+		
 		//Aprovar
+		
 		if(e.getSource() == this.painelFuncionario.getApOEmprestimoButton()) {
 			this.painelFuncionario.criarPainelAprovarEmprestimo();
 		}
@@ -109,6 +135,7 @@ public class ControllerPainelFuncionario extends Observable implements ActionLis
 		}
 
 		//realizar
+		
 		if(e.getSource() == this.painelFuncionario.getrOEmprestimoButton()) {
 			this.painelFuncionario.criarPainelRealizarEmprestimo();
 		}

@@ -19,6 +19,7 @@ import br.com.view.funcionario.cadastro.PainelCadastroDepartamento;
 import br.com.view.funcionario.cadastro.PainelCadastroFuncionario;
 import br.com.view.funcionario.cadastro.PainelCadastroLivro;
 import br.com.view.funcionario.cadastro.PainelCadastroUsuario;
+import br.com.view.funcionario.listar.PainelListarUsuario;
 import br.com.view.funcionario.realizar.PainelRealizarEmprestimo;
 import br.com.view.funcionario.realizar.PainelRealizarReserva;
 
@@ -45,28 +46,33 @@ public class PainelFuncionario extends JPanel {
 	private JPanel painelAtualizarOpcoes;
 	private JPanel painelAprovarOpcoes;
 	private JPanel painelRealizarOpcoes;
+	private JPanel painelListarOpcoes;
 	
+	private PainelCaixa painelCaixa;
+
 	private PainelCadastroUsuario painelCadastroUsuario;
 	private PainelCadastroLivro painelCadastroLivro;
 	private PainelCadastroFuncionario painelCadastroFuncionario;
 	private PainelCadastroAutor painelCadastroAutor;
 	private PainelCadastroDepartamento painelCadastroDepartamento;
 	private PainelCadastroCurso painelCadastroCurso;
-	
+
 	private PainelAlteraUsuario painelAlteraUsuario;
 	private PainelAlteraLivro painelAlteraLivro;
 	private PainelAlteraFuncionario painelAlteraFuncionario;
 	private PainelAlteraAutor painelAlteraAutor;
 	private PainelAlteraDepartamento painelAlteraDepartamento;
 	private PainelAlteraCurso painelAlteraCurso;
-	
+
 	private PainelAprovarReserva painelAprovarReserva;
 	private PainelAprovarEmprestimo painelAprovarEmprestimo;
-	
+
 	private PainelRealizarReserva painelRealizarReserva;
 	private PainelRealizarEmprestimo painelRealizarEmprestimo;
 	
-	
+	private PainelListarUsuario painelListarUsuario;
+
+
 	/*
 	 * Butões
 	 */
@@ -93,6 +99,15 @@ public class PainelFuncionario extends JPanel {
 	private JButton aOCursoButton;
 	private JButton aODepartamentoButton;
 
+	private JButton lOLivroButton;
+	private JButton lOAutorButton;
+	private JButton lOUsuarioButton;
+	private JButton lOFuncionarioButton;
+	private JButton lOCursoButton;
+	private JButton lODepartamentoButton;
+	private JButton lOEmprestimoButton;
+	private JButton lOReservaButton;
+	
 	private JButton apOEmprestimoButton;
 	private JButton apOReservaButton;
 
@@ -100,9 +115,9 @@ public class PainelFuncionario extends JPanel {
 	private JButton rOReservaButton;
 
 	private ControllerPainelFuncionario controller;
-	
+
 	private TelaPadrao telaPadrao;
-	
+
 	public PainelFuncionario(Funcionario funcionario,ControllerTelaPrincipal c) {
 
 		setBackground(Color.WHITE);
@@ -115,6 +130,8 @@ public class PainelFuncionario extends JPanel {
 		criarPainelAprovarOpcoes();
 		criarPainelAtualizarOpcoes();
 		criarPainelRelizarOpcoes();
+		criarPainelListarOpcoes();
+
 
 	}
 
@@ -156,12 +173,12 @@ public class PainelFuncionario extends JPanel {
 		this.deslogarButton = new JButton("Deslogar");
 		this.deslogarButton.addActionListener(controller);
 		this.painelMenu.add(this.deslogarButton);
-		
-		
+
+
 	}
 
 	public void criarPainelCadastrarOpcoes() {
-		
+
 		this.painelCadastrarOpcoes = new JPanel();
 		this.painelCadastrarOpcoes.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Cadastro", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.painelCadastrarOpcoes.setBackground(Color.WHITE);
@@ -195,7 +212,7 @@ public class PainelFuncionario extends JPanel {
 	}
 
 	public void criarPainelAtualizarOpcoes() {
-		
+
 		this.painelAtualizarOpcoes = new JPanel();
 		this.painelAtualizarOpcoes.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Atualizar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.painelAtualizarOpcoes.setBackground(Color.WHITE);
@@ -227,9 +244,49 @@ public class PainelFuncionario extends JPanel {
 
 		this.painelAtualizarOpcoes.setVisible(false);
 	}
+	public void criarPainelListarOpcoes() {
 
-	public void criarPainelAprovarOpcoes() {
+		this.painelListarOpcoes = new JPanel();
+		this.painelListarOpcoes.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Atualizar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		this.painelListarOpcoes.setBackground(Color.WHITE);
+		this.painelListarOpcoes.setLayout(new GridLayout(0, 1, 0, 0));
+
+		this.lOLivroButton = new JButton("Livro");
+		this.lOLivroButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOLivroButton);
+
+		this.lOAutorButton = new JButton("Autor");
+		this.lOAutorButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOAutorButton);
+
+		this.lOUsuarioButton = new JButton("Usuario");
+		this.lOUsuarioButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOUsuarioButton);
+
+		this.lOFuncionarioButton = new JButton("Funcionario");
+		this.lOFuncionarioButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOFuncionarioButton);
+
+		this.lOCursoButton = new JButton("Curso");
+		this.lOCursoButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOCursoButton);
+
+		this.lODepartamentoButton = new JButton("Departamento");
+		this.lODepartamentoButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lODepartamentoButton);
 		
+		this.lOEmprestimoButton = new JButton("Emprestimo");
+		this.lOEmprestimoButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOEmprestimoButton);
+
+		this.lOReservaButton = new JButton("Reserva");
+		this.lOReservaButton.addActionListener(controller);
+		this.painelListarOpcoes.add(this.lOReservaButton);
+
+		this.painelListarOpcoes.setVisible(false);
+	}
+	public void criarPainelAprovarOpcoes() {
+
 		this.painelAprovarOpcoes = new JPanel();
 		this.painelAprovarOpcoes.setBorder(new TitledBorder(new LineBorder(new Color(64, 64, 64), 2, true), "Aprovar", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		this.painelAprovarOpcoes.setBackground(Color.WHITE);
@@ -264,79 +321,94 @@ public class PainelFuncionario extends JPanel {
 		this.painelRealizarOpcoes.setVisible(false);
 	}
 
-//	public void limparCentro(){
-//		try {
-//			BorderLayout layout = (BorderLayout) getLayout();
-//			remove(layout.getLayoutComponent(BorderLayout.CENTER));
-//		} catch (Exception e) {}
-//	}
-	
+	//	public void limparCentro(){
+	//		try {
+	//			BorderLayout layout = (BorderLayout) getLayout();
+	//			remove(layout.getLayoutComponent(BorderLayout.CENTER));
+	//		} catch (Exception e) {}
+	//	}
+
 	//TelasCadastro
+	public void criarPainelCaixa() {
+		this.painelCaixa = new PainelCaixa();
+		this.telaPadrao = new TelaPadrao("Caixa", this.painelCaixa);
+	}
+	//Cadastro
 	public void criarPainelCadastrarUsuario() {
-//		limparCentro();
-//		this.painelCadastroUsuario = new PainelCadastroUsuario();
-//		this.add(this.painelCadastroUsuario, BorderLayout.CENTER);
-//		this.painelCadastroUsuario.setVisible(true);
+		//		limparCentro();
+		//		this.painelCadastroUsuario = new PainelCadastroUsuario();
+		//		this.add(this.painelCadastroUsuario, BorderLayout.CENTER);
+		//		this.painelCadastroUsuario.setVisible(true);
 		this.painelCadastroUsuario = new PainelCadastroUsuario();
 		this.telaPadrao = new TelaPadrao("Cadastro Usuario", this.painelCadastroUsuario);
 	}
-	
+
 	public void criarPainelCadastrarFuncionario() {
 		this.painelCadastroFuncionario = new PainelCadastroFuncionario();
 		this.telaPadrao = new TelaPadrao("Cadastro Funcionario", this.painelCadastroFuncionario);
 	}
-	
+
 	public void criarPainelCadastrarAutor() {
 		this.painelCadastroAutor = new PainelCadastroAutor();
 		this.telaPadrao = new TelaPadrao("Cadastro Autor", this.painelCadastroAutor);
 	}
-	
+
 	public void criarPainelCadastrarLivro() {
 		this.painelCadastroLivro = new PainelCadastroLivro();
 		this.telaPadrao = new TelaPadrao("Cadastro Livro", this.painelCadastroLivro);
 	}
-	
+
 	public void criarPainelCadastrarCurso() {
 		this.painelCadastroCurso = new PainelCadastroCurso();
 		this.telaPadrao = new TelaPadrao("Cadastro Curso", this.painelCadastroCurso);
 	}
-	
+
 	public void criarPainelCadastrarDepartamento() {
 		this.painelCadastroDepartamento = new PainelCadastroDepartamento();
 		this.telaPadrao = new TelaPadrao("Cadastro Departamento", this.painelCadastroDepartamento);
 	}
-	
-	//Telas Alterar
-	
 
+	//Telas Alterar
+
+
+	
+	//Alterar
 	public void criarPainelAlteraUsuario() {
 		this.painelAlteraUsuario = new PainelAlteraUsuario();
 		this.telaPadrao = new TelaPadrao("Altera Usuario", this.painelAlteraUsuario);
 	}
-	
+
 	public void criarPainelAlteraFuncionario() {
 		this.painelAlteraFuncionario = new PainelAlteraFuncionario();
 		this.telaPadrao = new TelaPadrao("Altera Funcionario", this.painelAlteraFuncionario);
 	}
-	
+
 	public void criarPainelAlteraAutor() {
 		this.painelAlteraAutor = new PainelAlteraAutor();
 		this.telaPadrao = new TelaPadrao("Altera Autor", this.painelAlteraAutor);
 	}
-	
+
 	public void criarPainelAlteraLivro() {
 		this.painelAlteraLivro = new PainelAlteraLivro();
 		this.telaPadrao = new TelaPadrao("Altera Livro", this.painelAlteraLivro);
 	}
-	
+
 	public void criarPainelAlteraCurso() {
 		this.painelAlteraCurso = new PainelAlteraCurso();
 		this.telaPadrao = new TelaPadrao("Altera Curso", this.painelAlteraCurso);
 	}
-	
+
 	public void criarPainelAlteraDepartamento() {
 		this.painelAlteraDepartamento = new PainelAlteraDepartamento();
 		this.telaPadrao = new TelaPadrao("Altera Departamento", this.painelAlteraDepartamento);
+	}
+
+	//Aprovar
+	
+	//Listar
+	public void criarPainelListarUsuario() {
+		this.painelListarUsuario = new PainelListarUsuario();
+		this.telaPadrao = new TelaPadrao("Listar Usuario", this.painelListarUsuario);
 	}
 	
 	//Aprovar
@@ -344,84 +416,81 @@ public class PainelFuncionario extends JPanel {
 		this.painelAprovarReserva = new PainelAprovarReserva(this.funcionario);
 		this.telaPadrao = new TelaPadrao("Aprovar Reserva", this.painelAprovarReserva);
 	}
-	
+
 	public void criarPainelAprovarEmprestimo() {
 		this.painelAprovarEmprestimo = new PainelAprovarEmprestimo(this.funcionario);
 		this.telaPadrao = new TelaPadrao("Devolver Emprestimo", this.painelAprovarEmprestimo);
 	}
-	
+
 	//Realizar
-		public void criarPainelRealizarReserva() {
-			this.painelRealizarReserva = new PainelRealizarReserva(this.funcionario);
-			this.telaPadrao = new TelaPadrao("Realizar Reserva", this.painelRealizarReserva);
-		}
-		
-		public void criarPainelRealizarEmprestimo() {
-			this.painelRealizarEmprestimo = new PainelRealizarEmprestimo(this.funcionario);
-			this.telaPadrao = new TelaPadrao("Realizar Emprestimo", this.painelRealizarEmprestimo);
-		}
-	
+	public void criarPainelRealizarReserva() {
+		this.painelRealizarReserva = new PainelRealizarReserva(this.funcionario);
+		this.telaPadrao = new TelaPadrao("Realizar Reserva", this.painelRealizarReserva);
+	}
+
+	public void criarPainelRealizarEmprestimo() {
+		this.painelRealizarEmprestimo = new PainelRealizarEmprestimo(this.funcionario);
+		this.telaPadrao = new TelaPadrao("Realizar Emprestimo", this.painelRealizarEmprestimo);
+	}
+
 	/*
 	 * Visualização
 	 */
 
 	public void mostrarCadastrarOpcoes(){
-		this.painelAtualizarOpcoes.setVisible(false);
-		this.painelAprovarOpcoes.setVisible(false);
-		this.painelRealizarOpcoes.setVisible(false);
+		this.esconderPaineisDeOpcoes();
 
-		
+
 		this.add(this.painelCadastrarOpcoes, BorderLayout.EAST);
 		this.painelCadastrarOpcoes.setVisible(true);
 	}
 
 	public void mostrarAtualizarOpcoes() {
-		this.painelAprovarOpcoes.setVisible(false);
-		this.painelRealizarOpcoes.setVisible(false);
-		this.painelCadastrarOpcoes.setVisible(false);
+		this.esconderPaineisDeOpcoes();
 
-		
+
 		this.add(this.painelAtualizarOpcoes, BorderLayout.EAST);
 		this.painelAtualizarOpcoes.setVisible(true);
 	}
 
 	public void mostrarAprovarOpcoes() {
-		this.painelRealizarOpcoes.setVisible(false);
-		this.painelCadastrarOpcoes.setVisible(false);
-		this.painelAtualizarOpcoes.setVisible(false);
+		this.esconderPaineisDeOpcoes();
 
-		
 		this.add(this.painelAprovarOpcoes, BorderLayout.EAST);
 		this.painelAprovarOpcoes.setVisible(true);
 	}
 
 	public void mostrarRelizarOpcoes() {
+		this.esconderPaineisDeOpcoes();
 
-		this.painelCadastrarOpcoes.setVisible(false);
-		this.painelAtualizarOpcoes.setVisible(false);
-		this.painelAprovarOpcoes.setVisible(false);
-
-		
 		this.add(this.painelRealizarOpcoes, BorderLayout.EAST);
 		this.painelRealizarOpcoes.setVisible(true);
 	}
+	
+	public void mostrarListarOpcoes() {
+		this.esconderPaineisDeOpcoes();
+
+		this.add(this.painelListarOpcoes, BorderLayout.EAST);
+		this.painelListarOpcoes.setVisible(true);
+	}
 
 	public void esconderPaineisDeOpcoes() {
+		this.painelListarOpcoes.setVisible(false);
 		this.painelAprovarOpcoes.setVisible(false);
 		this.painelRealizarOpcoes.setVisible(false);
-		this.painelCadastrarOpcoes.setVisible(false);
 		this.painelAtualizarOpcoes.setVisible(false);
+		this.painelCadastrarOpcoes.setVisible(false);
 	}
-	
 
-	
+
+
 
 	/*
 	 * GETs
 	 */
-	
-	
-	
+
+
+
 	public Funcionario getFuncionario() {
 		return funcionario;
 	}
@@ -542,6 +611,40 @@ public class PainelFuncionario extends JPanel {
 		return telaPadrao;
 	}
 
+	public JButton getlOLivroButton() {
+		return lOLivroButton;
+	}
+
+	public JButton getlOAutorButton() {
+		return lOAutorButton;
+	}
+
+	public JButton getlOUsuarioButton() {
+		return lOUsuarioButton;
+	}
+
+	public JButton getlOFuncionarioButton() {
+		return lOFuncionarioButton;
+	}
+
+	public JButton getlOCursoButton() {
+		return lOCursoButton;
+	}
+
+	public JButton getlODepartamentoButton() {
+		return lODepartamentoButton;
+	}
+
+	public JButton getlOEmprestimoButton() {
+		return lOEmprestimoButton;
+	}
+
+	public JButton getlOReservaButton() {
+		return lOReservaButton;
+	}
+
 	
+
+
 
 }

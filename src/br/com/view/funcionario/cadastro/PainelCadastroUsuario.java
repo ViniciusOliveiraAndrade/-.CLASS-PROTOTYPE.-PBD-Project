@@ -139,7 +139,7 @@ public class PainelCadastroUsuario extends JPanel{
 
 
 
-		JLabel lblSituao = new JLabel("Situa\u00E7\u00E3o:");
+		JLabel lblSituao = new JLabel("Situacao:");
 		lblSituao.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		this.add(lblSituao);
 

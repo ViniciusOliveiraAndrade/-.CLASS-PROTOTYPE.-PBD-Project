@@ -5,11 +5,12 @@ import java.util.List;
 import javax.persistence.Query;
 
 import br.com.model.beans.Emprestimo;
+import br.com.model.beans.Saldo;
 import br.com.model.beans.Usuario;
 
-
+@SuppressWarnings({ "unchecked", "static-access" })
 public class EmprestimoDAO {
-	@SuppressWarnings("static-access")
+	
 	public static synchronized void persist(Emprestimo object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -18,11 +19,8 @@ public class EmprestimoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized void remove(Emprestimo object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -32,11 +30,8 @@ public class EmprestimoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
-	@SuppressWarnings("static-access")
 	public static synchronized void merge(Emprestimo object) {
 		try {
 			Connection.getInstance().getEntityManager().getTransaction().begin();
@@ -45,12 +40,9 @@ public class EmprestimoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 	}
 	
-	@SuppressWarnings({ "static-access", "unchecked" })
 	public static synchronized List<Emprestimo> getByCpf(String cpf) {
 		List<Emprestimo> emprestimos = null;
 		Usuario u = UsuarioDAO.getByCpf(cpf);
@@ -63,13 +55,10 @@ public class EmprestimoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 		
 		return emprestimos;
 	}
-	@SuppressWarnings({ "static-access" })
 	public static synchronized long getQuantidadeEmprestimos(String cpf) {
 		long qt = 0;
 		Usuario u = UsuarioDAO.getByCpf(cpf);
@@ -82,21 +71,21 @@ public class EmprestimoDAO {
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			Connection.getInstance().getEntityManager().getTransaction().rollback();
-		}finally {
-//			Connection.getInstance().getEntityManager().close();
 		}
 		
 		return qt;
 	}
 	
-	@SuppressWarnings("static-access")
 	public static synchronized Emprestimo getById(final int id) {
 		return Connection.getInstance().getEntityManager().find(Emprestimo.class, id);
 	}
 
-	@SuppressWarnings({ "unchecked", "static-access" })
 	public static synchronized List<Emprestimo> findAll() {
 		return Connection.getInstance().getEntityManager().createQuery("FROM " + Emprestimo.class.getName()).getResultList();
+	}
+	
+	public static synchronized List<Saldo> getCaixa() {
+		return Connection.getInstance().getEntityManager().createQuery("select s from Saldo s" ).getResultList();
 	}
 
 	public static synchronized void removeById(final int id) {
