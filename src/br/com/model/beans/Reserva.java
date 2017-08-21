@@ -1,7 +1,8 @@
-//Reserva  (*id, data_realização, data_validaçao, data_limite, #id_livro, #id_usuario, #id_funcionario)
+//Reserva  (*id, data_realizaï¿½ï¿½o, data_validaï¿½ao, data_limite, #id_livro, #id_usuario, #id_funcionario)
 
 package br.com.model.beans;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -40,7 +41,26 @@ public class Reserva {
 	@JoinColumn(name = "funcionario_id")
 	private Funcionario funcionario;
 	
+	private String situacao = "";
+	
 	public Reserva() {}
+	
+	public Reserva(Date data_realizacao, Livro livro, Usuario usuario,
+			Funcionario funcionario) {
+		
+		Calendar c = Calendar.getInstance(); 
+		c.setTime(data_realizacao); 
+		c.add(Calendar.DATE, 15);
+		
+		this.data_realizacao = data_realizacao;
+		this.data_validacao = null;
+		this.data_limite = c.getTime();
+		this.livro = livro;
+		this.situacao = "Aberto";
+		this.usuario = usuario;
+		this.funcionario = funcionario;
+	}
+
 
 	/*
 	 * =========================================  GET and SET  ===================================================
@@ -82,6 +102,10 @@ public class Reserva {
 		return livro;
 	}
 
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
 	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
@@ -101,4 +125,14 @@ public class Reserva {
 	public void setFunciomario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}
+
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+	
+	
 }

@@ -25,6 +25,7 @@ public class PainelUsuarioEmprestimos extends JPanel{
 		this.add(tabelaEmprestimos);
 		this.cpfUsuarioLogado = cpf;
 		this.controller = new ControllerPainelUsuarioEmprestimos(this);
+		this.controller.preencherTabela();
 	}
 	
 	public void ativar(){

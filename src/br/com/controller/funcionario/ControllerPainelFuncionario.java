@@ -73,7 +73,7 @@ public class ControllerPainelFuncionario extends Observable implements ActionLis
 		}
 
 		//Alterar
-		
+
 		if(e.getSource() == this.painelFuncionario.getaOUsuarioButton()) {
 			this.painelFuncionario.criarPainelAlteraUsuario();
 		}
@@ -97,8 +97,26 @@ public class ControllerPainelFuncionario extends Observable implements ActionLis
 		if(e.getSource() == this.painelFuncionario.getaODepartamentoButton()) {
 			this.painelFuncionario.criarPainelAlteraDepartamento();
 		}
-		
-		
+		//Listar
+
+		//Aprovar
+		if(e.getSource() == this.painelFuncionario.getApOEmprestimoButton()) {
+			this.painelFuncionario.criarPainelAprovarEmprestimo();
+		}
+
+		if(e.getSource() == this.painelFuncionario.getApOReservaButton()) {
+			this.painelFuncionario.criarPainelAprovarReserva();
+		}
+
+		//realizar
+		if(e.getSource() == this.painelFuncionario.getrOEmprestimoButton()) {
+			this.painelFuncionario.criarPainelRealizarEmprestimo();
+		}
+
+		if(e.getSource() == this.painelFuncionario.getrOReservaButton()) {
+			this.painelFuncionario.criarPainelRealizarReserva();
+		}
+
 		//		if(e.getSource() == this.painelFuncionario.getaOButton) {System.out.println("cO");this.painelFuncionario}
 
 

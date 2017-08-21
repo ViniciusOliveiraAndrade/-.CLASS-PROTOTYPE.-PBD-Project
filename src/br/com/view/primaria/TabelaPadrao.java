@@ -36,6 +36,7 @@ public class TabelaPadrao extends JPanel{
 		this.table.setCellEditor(null);
 		this.table.setBackground(Color.WHITE);
 		
+		
 		this.scrollPane = new JScrollPane(this.table);
 		this.scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		this.scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -62,5 +63,12 @@ public class TabelaPadrao extends JPanel{
 		this.model.setNumRows(0);
 	}
 	
+	public void podeSelecionar(boolean sim) {
+		this.table.setRowSelectionAllowed(sim);
+	}
+	
+	public Object pegarSelecionado(int coluna) {
+		return this.table.getValueAt(this.table.getSelectedRow(),coluna);
+	}
 	
 }

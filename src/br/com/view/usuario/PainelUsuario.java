@@ -122,7 +122,7 @@ public class PainelUsuario extends JPanel{
 
 	public void iniciarTabelas() {
 
-		this.painelAcervo = new PainelUsuarioAcervo();
+		this.painelAcervo = new PainelUsuarioAcervo(this.usuario);
 		this.painelAcervo.desativar();
 
 		this.painelStatus = new PainelUsuarioStatus(this.usuario);

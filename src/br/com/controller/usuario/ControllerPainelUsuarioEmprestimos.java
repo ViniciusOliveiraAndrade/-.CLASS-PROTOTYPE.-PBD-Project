@@ -11,15 +11,12 @@ public class ControllerPainelUsuarioEmprestimos {
 	private PainelUsuarioEmprestimos painelUsuarioEmprestimos;
 	
 	public ControllerPainelUsuarioEmprestimos(PainelUsuarioEmprestimos painelUsuarioEmprestimos) {
-		
 		this.painelUsuarioEmprestimos = painelUsuarioEmprestimos;
-		preencherTabela();
 	}
 	
 	public void preencherLinhaTabela(Emprestimo e){
 		if(e.getSituacao().equals("Em andamento")) {
 			this.painelUsuarioEmprestimos.getTabelaEmprestimos().setRow(new Object[] {e.getId(),e.getLivro().getTitulo(),e.getSituacao(),e.getData_emprestimo(),e.getData_prevista_entrega(),"",e.getMulta(),e.getFuncionario_Emprestimo().getNome(),""});
-
 		}else {
 			this.painelUsuarioEmprestimos.getTabelaEmprestimos().setRow(new Object[] {e.getId(),e.getLivro().getTitulo(),e.getSituacao(),e.getData_emprestimo(),e.getData_prevista_entrega(),e.getData_entrega(),e.getMulta(),e.getFuncionario_Emprestimo().getNome(),e.getFuncionario_Devolucao().getNome()});
 		}

@@ -89,11 +89,11 @@ public class PainelInicial extends JPanel{
 		
 		this.solicitarReservaButton = new JButton("Solicitar Reserva");
 		this.solicitarReservaButton.addActionListener(this.controller);
-		this.painelDosBotoesiniciais.add(this.solicitarReservaButton);
+//		this.painelDosBotoesiniciais.add(this.solicitarReservaButton);
 		
 		this.solicitarEmprestismoButton = new JButton("Solicitar Emprestismo");
 		this.solicitarEmprestismoButton.addActionListener(this.controller);
-		this.painelDosBotoesiniciais.add(this.solicitarEmprestismoButton);
+//		this.painelDosBotoesiniciais.add(this.solicitarEmprestismoButton);
 		
 		
 		

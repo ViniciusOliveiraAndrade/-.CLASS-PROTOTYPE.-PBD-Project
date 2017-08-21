@@ -12,6 +12,7 @@ import br.com.model.beans.Funcionario;
 import br.com.model.beans.Livro;
 import br.com.model.beans.Usuario;
 import br.com.model.controller.EmprestimoController;
+import br.com.model.dao.AutorDAO;
 import br.com.model.dao.DepartamentoDAO;
 import br.com.model.dao.EmprestimoDAO;
 import br.com.model.dao.FuncionarioDAO;
@@ -24,7 +25,9 @@ public class Testes {
 	
 	public static void main(String[] args) {
 		new TelaPrincipal();
-//		Livro l = new Livro(1, 1, 10, "oi eu sou omgoku", new Autor("Vinicius"), "dsds", new Date());
+//		Autor a = new Autor("Vinicius");
+//		AutorDAO.persist(a);
+//		Livro l = new Livro(1, 1, 10, "oi eu sou omgoku", AutorDAO.getById(12), "dsds", "10/10/1000");
 //		LivroDAO.persist(l);
 //		Funcionario f = new Funcionario(1, "1234", "viniFum");
 //		FuncionarioDAO.persist(f);

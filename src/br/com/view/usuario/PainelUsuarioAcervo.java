@@ -13,6 +13,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
 import br.com.controller.usuario.ControllerPainelUsuarioAcervo;
+import br.com.model.beans.Usuario;
 import br.com.view.primaria.TabelaPadrao;
 
 public class PainelUsuarioAcervo extends JPanel{
@@ -23,7 +24,7 @@ public class PainelUsuarioAcervo extends JPanel{
 	private JPanel painelPesquisa;
 	private TabelaPadrao tabelaAcervo;
 	
-	private JButton solicitarEmprestimoButton;
+//	private JButton solicitarEmprestimoButton;
 	private JButton solicitarReservaButton;
 	private JButton pesquisarButton;
 	
@@ -40,11 +41,13 @@ public class PainelUsuarioAcervo extends JPanel{
 	
 	private ControllerPainelUsuarioAcervo controller;
 	
-	public PainelUsuarioAcervo() {
-		
+	private Usuario u;
+	
+	public PainelUsuarioAcervo(Usuario u) {
+		this.u = u;
 		this.tabelaAcervo = new TabelaPadrao("Acervo");
 		this.tabelaAcervo.setColumns(new Object[] {"Id","Codigo","Titulo","Numero da edicao","Ano da publicacao","Numero de exemplares","Editora","Autor"});
-		
+		this.tabelaAcervo.podeSelecionar(true);
 		this.controller = new ControllerPainelUsuarioAcervo(this);
 		
 		this.painelOpcoes = new JPanel();
@@ -56,8 +59,8 @@ public class PainelUsuarioAcervo extends JPanel{
 		painelPesquisa.setBackground(Color.WHITE);
 		this.painelPesquisa.setBorder(new LineBorder(Color.DARK_GRAY, 2, true));
 		
-		this.solicitarEmprestimoButton = new JButton("Emprestimo");
-		this.solicitarEmprestimoButton.addActionListener(controller);
+//		this.solicitarEmprestimoButton = new JButton("Emprestimo");
+//		this.solicitarEmprestimoButton.addActionListener(controller);
 		
 		this.solicitarReservaButton = new JButton("Reserva");
 		this.solicitarReservaButton.addActionListener(controller);
@@ -110,7 +113,7 @@ public class PainelUsuarioAcervo extends JPanel{
 	}
 	
 	public void ordemAdicaoPainelOpcoes(){
-		this.painelOpcoes.add(this.solicitarEmprestimoButton);
+//		this.painelOpcoes.add(this.solicitarEmprestimoButton);
 		this.painelOpcoes.add(this.solicitarReservaButton);
 	}
 		
@@ -145,9 +148,9 @@ public class PainelUsuarioAcervo extends JPanel{
 		return this.tabelaAcervo;
 	}
 
-	public JButton getSolicitarEmprestimoButton() {
-		return solicitarEmprestimoButton;
-	}
+//	public JButton getSolicitarEmprestimoButton() {
+//		return solicitarEmprestimoButton;
+//	}
 
 	public JButton getSolicitarReservaButton() {
 		return solicitarReservaButton;
@@ -179,6 +182,11 @@ public class PainelUsuarioAcervo extends JPanel{
 
 	public JTextField getPesquisaField() {
 		return pesquisaField;
+	}
+
+
+	public Usuario getU() {
+		return u;
 	}
 
 }

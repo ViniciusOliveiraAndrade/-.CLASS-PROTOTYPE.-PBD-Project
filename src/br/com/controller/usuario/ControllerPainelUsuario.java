@@ -58,6 +58,7 @@ public class ControllerPainelUsuario  extends Observable implements ActionListen
 			this.painelUsuario.getPainelStatus().desativar();
 			this.painelUsuario.getPainelAcervo().desativar();
 			this.painelUsuario.getPainelReservas().desativar();
+			this.painelUsuario.getPainelEmprestimos().getController().preencherTabela();
 			this.painelUsuario.add(this.painelUsuario.getPainelEmprestimos(), BorderLayout.CENTER);
 			this.painelUsuario.getPainelEmprestimos().ativar();
 		}
@@ -67,6 +68,7 @@ public class ControllerPainelUsuario  extends Observable implements ActionListen
 			this.painelUsuario.getPainelStatus().desativar();
 			this.painelUsuario.getPainelEmprestimos().desativar();
 			this.painelUsuario.getPainelAcervo().desativar();
+			this.painelUsuario.getPainelReservas().getController().preencherTabela();
 			this.painelUsuario.add(this.painelUsuario.getPainelReservas(), BorderLayout.CENTER);
 			this.painelUsuario.getPainelReservas().ativar();
 		}
