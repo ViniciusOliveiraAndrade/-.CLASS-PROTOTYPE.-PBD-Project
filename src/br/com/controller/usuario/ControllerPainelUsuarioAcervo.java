@@ -3,6 +3,7 @@ package br.com.controller.usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -32,6 +33,14 @@ public class ControllerPainelUsuarioAcervo implements ActionListener{
 		}
 	}
 	
+	private void preencherTabela(){
+		List<Livro> livros = LivroDAO.findAll();
+		this.painelAcervo.getTabelaAcervo().zerarTabela();
+		for(int i =0; i < livros.size(); i++) {
+			this.painelAcervo.getTabelaAcervo().setRow(new Object[] {livros.get(i).getId(),livros.get(i).getCodigo(),livros.get(i).getNumero_edicao(),livros.get(i).getTitulo(),livros.get(i).getAno_publicacao(),livros.get(i).getNumero_exemplares(),livros.get(i).getEditora(),livros.get(i).getAutor().getNome()});
+		}
+	}
+	
 	private Livro pegarLivroSelecionado(){
 		Livro l = LivroDAO.getById((int)this.painelAcervo.getTabelaAcervo().pegarSelecionado(0));
 		return l;
@@ -52,6 +61,8 @@ public class ControllerPainelUsuarioAcervo implements ActionListener{
 			}
 			if(this.painelAcervo.getEditoraRB().isSelected()){
 				preencherTabela(this.lc.getLivroByEditora(this.painelAcervo.getPesquisaField().getText()));
+			}if(this.painelAcervo.getPesquisaField().getText().equals("")) {
+				this.preencherTabela();
 			}
 		}
 

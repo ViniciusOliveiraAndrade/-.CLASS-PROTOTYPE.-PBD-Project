@@ -1,25 +1,25 @@
 package br.com.main;
 
-import java.util.Date;
-
-import javax.swing.JFrame;
-
-import org.hibernate.dialect.DataDirectOracle9Dialect;
-
-import br.com.model.beans.Autor;
-import br.com.model.beans.Caixa;
-import br.com.model.beans.Departamento;
-import br.com.model.beans.Funcionario;
-import br.com.model.beans.Livro;
-import br.com.model.beans.Usuario;
-import br.com.model.controller.EmprestimoController;
-import br.com.model.dao.AutorDAO;
-import br.com.model.dao.DepartamentoDAO;
-import br.com.model.dao.EmprestimoDAO;
-import br.com.model.dao.FuncionarioDAO;
-import br.com.model.dao.LivroDAO;
-import br.com.model.dao.UsuarioDAO;
-import br.com.view.funcionario.cadastro.PainelCadastroUsuario;
+//import java.util.Date;
+//
+//import javax.swing.JFrame;
+//
+//import org.hibernate.dialect.DataDirectOracle9Dialect;
+//
+//import br.com.model.beans.Autor;
+//import br.com.model.beans.Caixa;
+//import br.com.model.beans.Departamento;
+//import br.com.model.beans.Funcionario;
+//import br.com.model.beans.Livro;
+//import br.com.model.beans.Usuario;
+//import br.com.model.controller.EmprestimoController;
+//import br.com.model.dao.AutorDAO;
+//import br.com.model.dao.DepartamentoDAO;
+//import br.com.model.dao.EmprestimoDAO;
+//import br.com.model.dao.FuncionarioDAO;
+//import br.com.model.dao.LivroDAO;
+//import br.com.model.dao.UsuarioDAO;
+//import br.com.view.funcionario.cadastro.PainelCadastroUsuario;
 import br.com.view.primaria.TelaPrincipal;
 
 public class Testes {

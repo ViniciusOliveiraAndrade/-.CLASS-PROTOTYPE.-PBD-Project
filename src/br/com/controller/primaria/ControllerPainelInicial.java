@@ -3,6 +3,7 @@ package br.com.controller.primaria;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Observable;
 
 import javax.swing.JOptionPane;
@@ -12,6 +13,7 @@ import br.com.model.beans.Livro;
 import br.com.model.beans.Usuario;
 import br.com.model.controller.LivroController;
 import br.com.model.controller.LoginController;
+import br.com.model.dao.LivroDAO;
 import br.com.view.primaria.PainelInicial;
 import br.com.view.primaria.TelaLogin;
 
@@ -35,7 +37,13 @@ public class ControllerPainelInicial extends Observable implements ActionListene
 			this.painelInicial.getTabelaAcervo().setRow(new Object[] {l.getId(),l.getCodigo(),l.getNumero_edicao(),l.getTitulo(),l.getAno_publicacao(),l.getNumero_exemplares(),l.getEditora(),l.getAutor().getNome()});
 		}
 	}
-	
+	private void preencherTabela(){
+		List<Livro> livros = LivroDAO.findAll();
+		this.painelInicial.getTabelaAcervo().zerarTabela();
+		for(int i =0; i < livros.size(); i++) {
+			this.painelInicial.getTabelaAcervo().setRow(new Object[] {livros.get(i).getId(),livros.get(i).getCodigo(),livros.get(i).getNumero_edicao(),livros.get(i).getTitulo(),livros.get(i).getAno_publicacao(),livros.get(i).getNumero_exemplares(),livros.get(i).getEditora(),livros.get(i).getAutor().getNome()});
+		}
+	}
 	private void setUsuario(Usuario u){
 		setChanged();
 		notifyObservers(u);
@@ -59,7 +67,10 @@ public class ControllerPainelInicial extends Observable implements ActionListene
 			}
 			if(this.painelInicial.getEditoraRB().isSelected()){
 				preencherTabela(this.lc.getLivroByEditora(this.painelInicial.getPesquisaField().getText()));
+			}if(this.painelInicial.getPesquisaField().getText().equals("")) {
+				preencherTabela();
 			}
+			
 		}
 		//loga como usuario ou funcionario
 		if(e.getSource() == this.painelInicial.getLogarButton()) {

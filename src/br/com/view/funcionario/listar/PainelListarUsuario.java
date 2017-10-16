@@ -53,7 +53,7 @@ public class PainelListarUsuario extends JPanel{
 		painelPesquisa.setBackground(Color.WHITE);
 		this.painelPesquisa.setBorder(new LineBorder(Color.DARK_GRAY, 2, true));
 		
-		this.pesquisarButton = new JButton("Suspender");
+		this.pesquisarButton = new JButton("Regularizar");
 		
 		
 		this.suspensoRB = new JRadioButton("Suspenso");

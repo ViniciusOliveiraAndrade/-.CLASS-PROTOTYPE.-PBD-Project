@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 
 public class TelaPadrao extends JFrame {
 	
+	private static final long serialVersionUID = 1L;
+
 	public TelaPadrao(String titulo, JPanel p ) {
 		super(titulo);
 		this.setSize(500,500);

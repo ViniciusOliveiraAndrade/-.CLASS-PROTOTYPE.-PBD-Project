@@ -3,12 +3,12 @@ package br.com.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 
 import br.com.model.controller.LoginController;
-import br.com.view.Antiga.TFuncionario;
+//import br.com.view.Antiga.TFuncionario;
 import br.com.view.Antiga.TLogin;
-import br.com.view.Antiga.TUsuario;
+//import br.com.view.Antiga.TUsuario;
 
 public class CTLogin implements ActionListener{
 
@@ -35,6 +35,14 @@ public class CTLogin implements ActionListener{
 //			}else {JOptionPane.showMessageDialog(this.tela,	 "Matricula ou CPF n�o encontrados");}
 		}
 
+	}
+
+	public LoginController getLc() {
+		return lc;
+	}
+
+	public void setLc(LoginController lc) {
+		this.lc = lc;
 	}
 
 
